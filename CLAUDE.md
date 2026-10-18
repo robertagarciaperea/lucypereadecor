@@ -19,7 +19,7 @@ Página de lucypereadecor.com (catálogo de Navidad, Querétaro). Cliente: Lucy 
 
 ## Estilo (no cambiar sin que lo pidan)
 Revista navideña de los 2000: papel crema, rojo y verde. Títulos Bodoni Moda, texto Libre Caslon Text, etiquetas Jost. Precios en Caslon negrita. Versión celular con reglas en `@media (max-width:640px)`.
-WhatsApp: 52 55 6969 5206. Instalan en Querétaro, CDMX y parte del Edo. Méx.; envíos a toda la República.
+WhatsApp: 52 55 6969 5206. Showroom: Tlacote 116, Villas del Mesón, Juriquilla, Querétaro. Instagram: @lucypereadecor. Instalan en Querétaro, CDMX y parte del Edo. Méx.; envíos a toda la República.
 
 ## Pendientes conocidos
 - Cascanueces rojo de terciopelo: falta foto, tamaño y precio.
