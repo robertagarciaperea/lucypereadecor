@@ -24,4 +24,3 @@ WhatsApp: 52 55 6969 5206. Instalan en Querétaro, CDMX y parte del Edo. Méx.; 
 ## Pendientes conocidos
 - Cascanueces rojo de terciopelo: falta foto, tamaño y precio.
 - "3 bolas de…" (nota incompleta) y "Ramas: diámetro, no alto" (¿ramas de abedul?).
-- Precio de los aromatizantes Bruma Scent.
