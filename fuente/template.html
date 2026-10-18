@@ -612,6 +612,41 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .incl-all{font-size:10px;margin-top:10px}
   .prices{gap:12px}
 }
+
+/* ===== Aromas (Bruma Scent) ===== */
+.news{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:5px 14px 5px 5px;border:1px solid var(--ink);border-radius:999px;background:var(--white);color:var(--ink);text-decoration:none;font:600 11px/1.2 var(--label);letter-spacing:.12em;text-transform:uppercase;transition:background .2s,color .2s}
+.news-tag{background:var(--red);color:#fff;border-radius:999px;padding:5px 10px;letter-spacing:.16em}
+.news-go{color:var(--red);font-size:14px;transition:transform .2s}
+.news:hover{background:var(--green);color:var(--cream);border-color:var(--green)}
+.news:hover .news-go{transform:translateX(4px);color:#E8C987}
+.aromas{background:var(--paper)}
+.aro-collab{display:flex;align-items:center;gap:10px;color:var(--green);margin:0 0 12px}
+.aro-new{background:var(--red);color:#fff;border-radius:999px;padding:4px 10px;font-size:10px}
+.aro-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.aro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:28px;align-items:center}
+.aro-ph{padding:8px;transform:rotate(-1.2deg);transition:transform .35s}
+.aro:nth-child(2) .aro-ph{transform:rotate(1.2deg)}
+.aro:hover .aro-ph{transform:rotate(0) translateY(-4px)}
+.aro-ph img{height:auto;aspect-ratio:3/4;object-fit:contain;background:#fff}
+.aro-brand{color:var(--muted);margin:0 0 10px;font-size:10px}
+.aro h3{font-size:clamp(30px,3vw,42px);line-height:1}
+.aro h3 em{color:var(--red)}
+.aro-notes{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:16px 0 14px}
+.aro-notes li{font:600 10px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--green);color:var(--green);border-radius:999px;padding:7px 11px}
+.aro-desc{margin:0 0 6px;font-style:italic}
+.aro-size{margin:0 0 18px;color:var(--muted);font-size:14px}
+.aro .btn svg{width:16px;height:16px}
+@media (max-width:980px){.aro-grid{grid-template-columns:1fr;gap:48px}}
+@media (max-width:640px){
+  .news{margin:0 auto 18px;display:flex;width:max-content;max-width:100%;font-size:10px;letter-spacing:.08em}
+  .aro{grid-template-columns:42% 1fr;gap:16px;align-items:start}
+  .aro h3{font-size:28px}
+  .aro-notes{margin:10px 0}
+  .aro-notes li{font-size:9px;padding:6px 8px}
+  .aro-desc{font-size:14px}
+  .aro-size{font-size:12.5px;margin-bottom:12px}
+  .aro .btn{width:100%;padding:0 10px;font-size:10px;letter-spacing:.1em;min-height:44px}
+}
 </style>
 </head>
 <body>
@@ -626,6 +661,7 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
     <nav class="label" aria-label="Secciones">
       <a href="#colecciones">Colecciones</a>
       <a href="#catalogo">Catálogo</a>
+      <a href="#aromas">Aromas</a>
       <a href="#instalacion">Instalación</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -636,6 +672,7 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   <section class="cover">
     <div class="wrap cover-grid">
       <div>
+        <a class="news" href="#aromas"><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños con Bruma Scent</span><span class="news-go" aria-hidden="true">→</span></a>
         <p class="kicker label">Venta · Renta · Instalación</p>
         <h1><span class="caps">Catálogo de</span><em>Navidad</em><span class="yr">2026</span></h1>
         <p class="dek">Árboles vestidos listos para tu casa, piezas sueltas para crear tu propio estilo y un equipo que lo instala por ti. Todos los artículos están en existencia.</p>
@@ -685,6 +722,42 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
         <div><b>Adornos a tu gusto</b><span>En venta puedes elegir los adornos y hacer algunos cambios a la colección.</span></div>
         <div><b>Renta</b><span>Solo se renta el árbol completo, no decoraciones sueltas. Incluye montar y desmontar.</span></div>
         <div><b>Venta</b><span>Se cobra la instalación y, si estás fuera de la ciudad de Querétaro, el envío.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block aromas" id="aromas">
+    <div class="wrap">
+      <div class="opener">
+        <h2>Aromas <em>para que tu casa huela a Navidad</em></h2>
+        <div>
+          <p class="label aro-collab"><span class="aro-new">Nuevo</span> En colaboración con Bruma Scent</p>
+          <p>Aromatizantes en spray para ambientar tu casa durante toda la temporada. Rocía en salas, recámaras, cortinas o cerca del árbol.</p>
+        </div>
+      </div>
+      <div class="aro-grid">
+        <article class="aro rv">
+          <figure class="frame aro-ph"><img loading="lazy" src="img/bruma-cuento-de-navidad.webp" alt="Aromatizante Cuento de Navidad de Bruma Scent, botella ámbar de 250 ml" width="640" height="1138"></figure>
+          <div class="aro-info">
+            <p class="label aro-brand">Bruma Scent × Lucy Perea Decor</p>
+            <h3>Cuento de <em>Navidad</em></h3>
+            <ul class="aro-notes"><li>Canela</li><li>Galleta</li><li>Especias</li></ul>
+            <p class="aro-desc">Dulce y cálido, como galletas recién horneadas junto al árbol.</p>
+            <p class="aro-size">Aromatizante ambiental · 250 ml</p>
+            <a class="btn btn-red" target="_blank" rel="noopener" data-wa="Hola, me interesa el aromatizante Cuento de Navidad de Bruma Scent.">__WAICON__ Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="aro rv">
+          <figure class="frame aro-ph"><img loading="lazy" src="img/bruma-christmas-tree.webp" alt="Aromatizante Christmas Tree de Bruma Scent, botella ámbar en spray" width="640" height="1138"></figure>
+          <div class="aro-info">
+            <p class="label aro-brand">Bruma Scent × Lucy Perea Decor</p>
+            <h3>Christmas <em>Tree</em></h3>
+            <ul class="aro-notes"><li>Pino</li><li>Ciprés</li><li>Especias</li></ul>
+            <p class="aro-desc">Fresco y verde, con el olor de un bosque de pinos en invierno.</p>
+            <p class="aro-size">Home spray · 250 ml</p>
+            <a class="btn btn-red" target="_blank" rel="noopener" data-wa="Hola, me interesa el aromatizante Christmas Tree de Bruma Scent.">__WAICON__ Pedir por WhatsApp</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -763,6 +836,7 @@ const IMG = "__IMGBASE__";
 const WAICON = '__WAICON__';
 const fmt = n => "$" + n.toLocaleString("es-MX");
 const wa = t => WA + "?text=" + encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a => a.href = wa(a.dataset.wa));
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const CODES = {"Golden Forest":"GF","White Christmas":"WC","Classic Christmas":"CC","Candy Land":"CL","Candy Cane":"CN","Navy Blue":"NB","Forest Whisper":"FW","Ralph Lauren Style":"RL","Frostbite":"FB","Burgundy Cranberry":"BC"};
 const pad = n => String(n).padStart(2, "0");
