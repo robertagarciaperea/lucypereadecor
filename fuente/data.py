@@ -268,4 +268,6 @@ COLLECTION_TREE = {
     "White Christmas": "Hudson Fraser Nevado Chico",
     "Candy Cane": "Hudson Fraser Nevado Grande",
     "Navy Blue": "Sierra Nevada LED Grande",
+    "Candy Land": "Hudson Fraser Nevado Chico",
+    "Forest Whisper": "Cashmere",
 }
