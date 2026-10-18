@@ -257,3 +257,15 @@ PIECES = {"Golden Forest":["ef09f84a9f4b284cfc9325d080d8e2f0.png","f8bbd3b9cd311
 
 # Color del plato de cada colección (como los círculos del sitio original)
 TINT = {"Golden Forest":"#C9B48F","White Christmas":"#8E9590","Classic Christmas":"#2F5E4A","Candy Land":"#A7A3C9","Candy Cane":"#9C3A3F","Navy Blue":"#3D4E73","Forest Whisper":"#7F9480","Ralph Lauren Style":"#8C8C8C","Frostbite":"#A5A3C7","Burgundy Cranberry":"#C46E73"}
+
+
+# Árbol (del catálogo ARBOLES) que se muestra en cada colección
+COLLECTION_TREE = {
+    "Burgundy Cranberry": "Hudson Natural Fraser Chico",
+    "Ralph Lauren Style": "Hudson Fraser Nevado Grande",
+    "Frostbite": "Sierra Nevada CL Grande",
+    "Golden Forest": "Sierra Nevada CL Grande",
+    "White Christmas": "Hudson Fraser Nevado Chico",
+    "Candy Cane": "Hudson Fraser Nevado Grande",
+    "Navy Blue": "Sierra Nevada LED Grande",
+}

@@ -663,6 +663,26 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 
 .aro-price{margin:4px 0 2px;font:700 clamp(28px,2.6vw,36px)/1 var(--text);color:var(--red);font-variant-numeric:lining-nums}
 @media (max-width:640px){.aro-price{font-size:26px}}
+
+/* ===== Árbol de cada colección ===== */
+.col .ph,.col:nth-child(even) .ph{grid-row:1 / span 5}
+.col .tcard{grid-column:2}
+.col.flip .tcard{grid-column:1}
+.tcard{margin-bottom:12px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px;align-items:center;background:var(--white);border:1px solid var(--rule);padding:12px 18px 12px 12px}
+.timg{aspect-ratio:1;background:radial-gradient(circle at 50% 45%,#fff 0%,#F4EDE2 75%);display:flex;align-items:center;justify-content:center;padding:8px}
+.timg img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .3s}
+.tcard:hover .timg img{transform:scale(1.06)}
+.ttxt .label{color:var(--green);margin:0 0 6px;font-size:10px}
+.tname{font-family:var(--display);font-weight:500;font-size:26px;line-height:1.05;margin:0 0 6px}
+.tspec{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
+@media (max-width:860px){.col .tcard,.col.flip .tcard{grid-column:1}.col .ph,.col.flip .ph{grid-row:auto}}
+@media (max-width:640px){
+  .col .ph,.col.flip .ph{grid-row:1}
+  .col .tcard,.col.flip .tcard{grid-column:1 / -1}
+  .tcard{grid-template-columns:120px minmax(0,1fr);gap:14px;padding:8px 12px 8px 8px;margin:4px 0 14px}
+  .tname{font-size:21px}
+  .tspec{font-size:12.5px}
+}
 </style>
 </head>
 <body>
@@ -892,6 +912,7 @@ document.getElementById("cols").innerHTML = DATA.collections.map((c, k) => `
         </div>
         <p class="incl-all">Incluye bajo árbol y adornos abajo.</p>${c.note ? `<p class="note">${esc(c.note)}</p>` : ""}
       </div>
+      ${c.treeItem ? `<div class="tcard rv"><div class="timg"><img loading="lazy" src="${IMG + c.treeItem.i}" alt="Árbol ${esc(c.treeItem.n)}"></div><div class="ttxt"><p class="label">El árbol de esta colección</p><p class="tname">${esc(c.treeItem.n)}</p><p class="tspec">${esc(c.treeItem.s)}</p></div></div>` : ""}
       <button type="button" class="pcs-toggle" aria-expanded="false" data-k="${k}">Ver las ${c.pieces.length} piezas</button>
       <div class="pcs">
         <p class="pieces-h"><span class="label">Lo que incluye</span><span class="pc-count">${c.pieces.length} piezas · toca para ampliar</span><span class="swipe-hint"><span>Desliza</span></span></p>

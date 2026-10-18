@@ -16,8 +16,12 @@ def items(lst):
         out.append({"n": n, "s": [[a, b] for a, b in s], "i": img(i)})
     return out
 
+TREES = {n: {"n": n, "s": s[0][0], "i": img(i)} for n, s, i, _ in ARBOLES}
+for _k, _v in COLLECTION_TREE.items():
+    assert _v in TREES, _v
+
 data = {
-    "collections": [{"name": n, "img": img(i), "tree": t, "sale": s, "rent": r, "note": note, "saleInc": INCLUDES[n][0], "rentInc": INCLUDES[n][1], "tint": TINT[n], "pieces": [[x.rstrip("*"), x.endswith("*")] for x in PIECES[n]], "new": n in NEW}
+    "collections": [{"name": n, "img": img(i), "tree": t, "sale": s, "rent": r, "note": note, "saleInc": INCLUDES[n][0], "rentInc": INCLUDES[n][1], "tint": TINT[n], "pieces": [[x.rstrip("*"), x.endswith("*")] for x in PIECES[n]], "new": n in NEW, "treeItem": TREES.get(COLLECTION_TREE.get(n))}
                     for n, i, t, s, r, note in sorted(COLLECTIONS, key=lambda c: (c[0] not in NEW, NEW.index(c[0]) if c[0] in NEW else 0))],
     "categories": [
         {"id": "arboles", "name": "Árboles", "items": items(ARBOLES)},
