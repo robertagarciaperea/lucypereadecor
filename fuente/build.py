@@ -40,5 +40,5 @@ html = (html.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators
             .replace("__HERO1__", BASE + img("3a75dc37")).replace("__HERO2__", BASE + img("ab12581c"))
             .replace("__HERO3__", BASE + img("08c15db3")))
 assert "__" not in re.sub(r"__[a-z]", "", html) or True
-here.joinpath("index.html").write_text(html)
+here.parent.joinpath("index.html").write_text(html)
 print("ok", len(html), {c["id"]: len(c["items"]) for c in data["categories"]}, len(data["collections"]))
