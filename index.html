@@ -688,7 +688,7 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 .h-long .nw{white-space:nowrap}
 
 /* ===== Showroom + Instagram ===== */
-.showroom-wrap{padding-top:22px}
+.showroom-wrap{padding-block:0 48px}
 .showroom{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:22px 28px;align-items:center;background:var(--red);color:var(--cream);padding:22px 30px;outline:1px solid var(--red);outline-offset:4px;box-shadow:inset 0 0 0 6px var(--red),inset 0 0 0 7px rgba(232,201,135,.85);overflow:hidden}
 .sr-door{width:64px;height:64px;color:#E8C987;flex:none}
 .sr-door svg{width:100%;height:100%}
@@ -714,7 +714,7 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .sr-btn{width:100%}
 }
 @media (max-width:640px){
-  .showroom-wrap{padding-top:12px}
+  .showroom-wrap{padding-block:0 28px}
   .showroom{grid-template-columns:minmax(0,1fr) auto;text-align:left;justify-items:stretch;gap:10px;padding:12px 14px;outline-offset:3px;box-shadow:inset 0 0 0 4px var(--red),inset 0 0 0 5px rgba(232,201,135,.85)}
   .sr-door,.sr-p,.sr-star.s2,.sr-star.s3{display:none}
   .sr-kick{font-size:8.5px;margin:0 0 3px;letter-spacing:.12em}
@@ -752,19 +752,6 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 </header>
 
 <main id="inicio">
-  <div class="showroom-wrap wrap">
-    <div class="showroom rv">
-      <span class="sr-star s1" aria-hidden="true">✦</span><span class="sr-star s2" aria-hidden="true">✦</span><span class="sr-star s3" aria-hidden="true">✧</span>
-      <div class="sr-door" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 58V22a18 18 0 0 1 36 0v36" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M20 58V24a12 12 0 0 1 24 0v34" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="39" cy="40" r="1.8" fill="currentColor"/><path d="M8 58h48" stroke="currentColor" stroke-width="2.4"/><path d="M32 4l1.8 4.2 4.2 1.8-4.2 1.8L32 16l-1.8-4.2L26 10l4.2-1.8z" fill="currentColor"/></svg></div>
-      <div class="sr-txt">
-        <p class="label sr-kick"><span class="sr-long">Querétaro · </span>Ya puedes visitarnos</p>
-        <p class="sr-h">¡Nuestro <em>showroom</em> ya está abierto!</p>
-        <p class="sr-addr"><svg class="sr-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="10" r="2.6" fill="#B3222C"/></svg>Tlacote 116, Villas del Mesón, Juriquilla, Querétaro</p>
-        <p class="sr-p">Ven a ver los árboles vestidos en persona, toca las piezas y arma tu Navidad con nosotros.</p>
-      </div>
-      <a class="btn sr-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Tlacote+116%2C+Villas+del+Mes%C3%B3n%2C+Juriquilla%2C+Quer%C3%A9taro">Cómo llegar</a>
-    </div>
-  </div>
   <section class="cover">
     <div class="wrap cover-grid">
       <div>
@@ -793,6 +780,19 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
     </div>
   </section>
 
+  <div class="showroom-wrap wrap">
+    <div class="showroom rv">
+      <span class="sr-star s1" aria-hidden="true">✦</span><span class="sr-star s2" aria-hidden="true">✦</span><span class="sr-star s3" aria-hidden="true">✧</span>
+      <div class="sr-door" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 58V22a18 18 0 0 1 36 0v36" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M20 58V24a12 12 0 0 1 24 0v34" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="39" cy="40" r="1.8" fill="currentColor"/><path d="M8 58h48" stroke="currentColor" stroke-width="2.4"/><path d="M32 4l1.8 4.2 4.2 1.8-4.2 1.8L32 16l-1.8-4.2L26 10l4.2-1.8z" fill="currentColor"/></svg></div>
+      <div class="sr-txt">
+        <p class="label sr-kick"><span class="sr-long">Querétaro · </span>Ya puedes visitarnos</p>
+        <p class="sr-h">¡Nuestro <em>showroom</em> ya está abierto!</p>
+        <p class="sr-addr"><svg class="sr-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="10" r="2.6" fill="#B3222C"/></svg>Tlacote 116, Villas del Mesón, Juriquilla, Querétaro</p>
+        <p class="sr-p">Ven a ver los árboles vestidos en persona, toca las piezas y arma tu Navidad con nosotros.</p>
+      </div>
+      <a class="btn sr-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Tlacote+116%2C+Villas+del+Mes%C3%B3n%2C+Juriquilla%2C+Quer%C3%A9taro">Cómo llegar</a>
+    </div>
+  </div>
   <div class="gingham" aria-hidden="true"></div>
   <div class="ticker" role="marquee" aria-label="Avisos"><div class="track"><span>Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span><span aria-hidden="true">Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span></div></div>
 
