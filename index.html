@@ -650,6 +650,16 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .aro-size{font-size:12.5px;margin-bottom:12px}
   .aro .btn{width:100%;padding:0 10px;font-size:10px;letter-spacing:.1em;min-height:44px}
 }
+
+.news{padding-left:8px;overflow:visible}
+.news-pics{display:flex;align-items:flex-end;height:30px;margin:-14px 0 -4px;flex:none}
+.news-pics picture{display:block}
+.news-pics img{display:block;height:46px;width:auto;filter:drop-shadow(0 3px 4px rgba(60,30,10,.25));transition:transform .25s}
+.news-pics picture + picture img{margin-left:-12px;transform:rotate(8deg)}
+.news-pics picture:first-child img{transform:rotate(-6deg)}
+.news:hover .news-pics img{transform:rotate(0) translateY(-3px)}
+.news-pics img{height:50px}
+@media (max-width:640px){.news{margin-top:14px;gap:8px}.news-long{display:none}.news-pics img{height:44px}}
 </style>
 </head>
 <body>
@@ -675,7 +685,7 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   <section class="cover">
     <div class="wrap cover-grid">
       <div>
-        <a class="news" href="#aromas"><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños con Bruma Scent</span><span class="news-go" aria-hidden="true">→</span></a>
+        <a class="news" href="#aromas"><span class="news-pics" aria-hidden="true"><picture><source srcset="img/bruma-cuento-de-navidad-mini.webp" type="image/webp"><img src="img/bruma-cuento-de-navidad-mini.png" alt="" width="34" height="60"></picture></span><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños <span class="news-long">con Bruma Scent</span></span><span class="news-go" aria-hidden="true">→</span></a>
         <p class="kicker label">Venta · Renta · Instalación</p>
         <h1><span class="caps">Catálogo de</span><em>Navidad</em><span class="yr">2026</span></h1>
         <p class="dek">Árboles vestidos listos para tu casa, piezas sueltas para crear tu propio estilo y un equipo que lo instala por ti. Todos los artículos están en existencia.</p>
