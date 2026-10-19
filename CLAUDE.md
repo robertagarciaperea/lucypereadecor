@@ -8,6 +8,8 @@ Página de lucypereadecor.com (catálogo de Navidad, Querétaro). Cliente: Lucy 
 - `fuente/data.py`: datos (colecciones, precios, `INCLUDES` qué incluye venta/renta, `PIECES` piezas por colección con `*` = agotada, catálogo: ARBOLES, ESFERAS, FOLLAJE, LISTONES, DECORACIONES, INSTALACION).
 - `fuente/build.py`: genera `index.html`. `NEW` = colecciones destacadas como Nuevas 2026.
 - `fuente/images.txt`: nombres de las fotos (se resuelven por prefijo de 8 caracteres). Las fotos del catálogo se cargan desde el sitio de Canva (`robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/`), que debe seguir publicado.
+- `fuente/menu.html`: menú de tres rayitas (se inserta en todas las páginas con `__MENU__`).
+- `fuente/showroom.html` → genera `showroom/index.html` (subpágina del showroom, usa el mismo estilo base).
 - `img/`: fotos propias (aromatizantes Bruma Scent, PNG/WebP con fondo transparente).
 
 ## Flujo para cualquier cambio

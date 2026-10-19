@@ -43,6 +43,9 @@ WA = "https://wa.me/525569695206"
 WAICON = ('<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3Z"/></svg>')
 
 html = here.joinpath("template.html").read_text()
+MENU = here.joinpath("menu.html").read_text()
+MAPS = "https://www.google.com/maps/search/?api=1&amp;query=Tlacote+116%2C+Villas+del+Mes%C3%B3n%2C+Juriquilla%2C+Quer%C3%A9taro"
+html = html.replace("__MENU__", MENU.replace("__HOME__", ""))
 html = (html.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
             .replace("__WAICON__", WAICON).replace("__WABASE__", WA).replace("__WA__", WA)
             .replace("__IMGBASE__", BASE).replace("__LOGO__", BASE + img("0a86810f"))
@@ -50,4 +53,18 @@ html = (html.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators
             .replace("__HERO3__", BASE + img("08c15db3")))
 assert "__" not in re.sub(r"__[a-z]", "", html) or True
 here.parent.joinpath("index.html").write_text(html)
+
+# ---- Subpágina del showroom ----
+cut = html.index("\n", html.index(".ico{width:16px")) + 1
+basehead = (html[:cut]
+    .replace("<title>Lucy Perea Decor · Navidad 2026</title>", "<title>Showroom · Lucy Perea Decor</title>")
+    .replace('content="Árboles de Navidad vestidos, esferas, follaje, listones y decoración en existencia. Venta, renta e instalación en Querétaro."',
+             'content="Visita el showroom de Lucy Perea Decor en Juriquilla, Querétaro. Árboles de Navidad vestidos y decoración en existencia. Solo con cita."'))
+sr = here.joinpath("showroom.html").read_text()
+sr = (sr.replace("__BASEHEAD__", basehead).replace("__MENU__", MENU.replace("__HOME__", "/"))
+        .replace("__WAICON__", WAICON).replace("__WA__", WA).replace("__MAPS__", MAPS)
+        .replace("__LOGO__", BASE + img("0a86810f")))
+assert "__" not in sr.replace("__pycache__", ""), [m for m in re.findall(r"__[A-Z]+__", sr)]
+here.parent.joinpath("showroom").mkdir(exist_ok=True)
+here.parent.joinpath("showroom", "index.html").write_text(sr)
 print("ok", len(html), {c["id"]: len(c["items"]) for c in data["categories"]}, len(data["collections"]))
