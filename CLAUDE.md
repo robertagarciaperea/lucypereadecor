@@ -22,7 +22,6 @@ Revista navideña de los 2000: papel crema, rojo y verde. Títulos Bodoni Moda, 
 WhatsApp: 52 55 6969 5206. Showroom: Tlacote 116, Villas del Mesón, Juriquilla, Querétaro. Instagram: @lucypereadecor. Instalan en Querétaro, CDMX y parte del Edo. Méx.; envíos a toda la República.
 
 ## Pendientes conocidos
-- Cascanueces rojo de terciopelo: falta foto, tamaño y precio.
 - En el catálogo, un producto puede tener foto compuesta: `{"g": [(prefijo, left%, top%, width%)...], "ar": ancho/alto}` (ej. Dulces candy).
 - Crystal Tree usa foto propia `img/crystal-tree.jpg`; `ITEMS` = lista de lo que incluye cuando no hay fotos de piezas; `EXTRA_PRICE` = tercer precio.
 - "3 bolas de…" (nota incompleta) y "Ramas: diámetro, no alto" (¿ramas de abedul?).
