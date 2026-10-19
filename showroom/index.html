@@ -122,6 +122,18 @@ body.menu-open{overflow:hidden}
 .mlinks a::before{content:"0" counter(m);font:600 10px/1 var(--label);letter-spacing:.14em;color:#E8C987;min-width:20px}
 .mlinks a:hover{color:#F4D9A6;padding-left:8px}
 .mlinks .mnew{margin-left:auto;align-self:center;font:700 9px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;background:var(--red);color:#fff;border-radius:999px;padding:6px 9px}
+.mrow{display:flex;align-items:center}
+.mrow a{flex:1}
+.mtog{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,246,232,.35);background:transparent;color:var(--cream);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .3s}
+.mtog:hover{background:rgba(255,246,232,.1)}
+.mtog svg{width:18px;height:18px;transition:transform .3s}
+.mtog[aria-expanded="true"] svg{transform:rotate(180deg)}
+.msub{list-style:none;margin:0;padding:0 0 0 34px;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mhas.open .msub{max-height:320px;padding-bottom:10px}
+.msub li{border:0}
+.msub a{counter-increment:none!important}
+.msub a{font:600 11.5px/1.2 var(--label)!important;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,246,232,.85)!important;padding:9px 2px!important}
+.msub a::before{content:"—"!important;color:#E8C987;font:inherit!important;min-width:0!important;letter-spacing:0}
 .mfoot{margin-top:auto;padding-top:26px;display:flex;flex-direction:column;gap:10px}
 .mfoot a{display:inline-flex;align-items:center;gap:10px;color:var(--cream);text-decoration:none;font:600 11px/1.3 var(--label);letter-spacing:.14em;text-transform:uppercase}
 .mfoot a:hover{color:#F4D9A6}
@@ -140,7 +152,8 @@ body.menu-open{overflow:hidden}
   <p class="mkick">Lucy Perea Decor · Navidad 2026</p>
   <ul class="mlinks">
     <li><a href="/#colecciones">Colecciones</a></li>
-    <li><a href="/#catalogo">Catálogo</a></li>
+    <li class="mhas"><div class="mrow"><a href="/#catalogo">Catálogo</a><button type="button" class="mtog" aria-expanded="false" aria-controls="msub-cat" aria-label="Ver categorías del catálogo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <ul class="msub" id="msub-cat"><li><a href="/#cat-arboles">Árboles</a></li><li><a href="/#cat-esferas">Esferas y ornamentos</a></li><li><a href="/#cat-follaje">Follaje y moños</a></li><li><a href="/#cat-listones">Listones</a></li><li><a href="/#cat-decoraciones">Decoraciones</a></li></ul></li>
     <li><a href="/#aromas">Aromas</a></li>
     <li><a href="/#instalacion">Instalación</a></li>
     <li><a href="/#contacto">Contacto</a></li>
@@ -158,6 +171,7 @@ body.menu-open{overflow:hidden}
   function set(open){document.body.classList.toggle("menu-open",open);b.setAttribute("aria-expanded",open);b.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");p.setAttribute("aria-hidden",!open);if(open){var f=p.querySelector("a");f&&f.focus({preventScroll:true});}}
   b.addEventListener("click",function(){set(!document.body.classList.contains("menu-open"));});
   sh.addEventListener("click",function(){set(false);});
+  p.querySelectorAll(".mtog").forEach(function(tg){tg.addEventListener("click",function(e){e.stopPropagation();var li=tg.closest(".mhas"),o=!li.classList.contains("open");li.classList.toggle("open",o);tg.setAttribute("aria-expanded",o);});});
   p.addEventListener("click",function(e){if(e.target.closest("a"))set(false);});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&document.body.classList.contains("menu-open")){set(false);b.focus();}});
 })();

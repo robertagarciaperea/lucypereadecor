@@ -1080,6 +1080,17 @@ tabs.addEventListener("click", e => {
 });
 q.addEventListener("input", render);
 render();
+// Abrir una categoría desde el menú: #cat-<id>
+function openCat(){
+  const m = location.hash.match(/^#cat-([\w-]+)$/); if (!m) return;
+  const c = cats.find(c => c.id === m[1]); if (!c) return;
+  current = c.id; q.value = "";
+  tabs.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.id === current));
+  render();
+  document.getElementById("catalogo").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+}
+window.addEventListener("hashchange", openCat);
+openCat();
 
 // Gentle reveal: content is visible at rest; it only settles into place when scrolled to
 document.documentElement.classList.add("js");
