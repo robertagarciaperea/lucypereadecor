@@ -12,7 +12,7 @@ COLLECTIONS = [
     ("Ralph Lauren Style", "ccfa56f8", "Árbol Hudson Fraser de 3.00 m", 85000, 32000, ""),
     ("Frostbite", "ab12581c", "Árbol Sierra Nevada de 2.60 m", 65000, 30000, ""),
     ("Burgundy Cranberry", "08c15db3", "Árbol Hudson Natural Fraser de 2.28 m", 65000, 26000, ""),
-    ("Crystal Tree", "img/crystal-tree.jpg", "Árbol Sierra Nevada CL Grande", 46000, 25000, ""),
+    ("Crystal Tree", "img/crystal-tree.jpg", "Árbol Sierra Nevada CL Grande", 46000, 25000, "También incluye ornamento de acrílico y ornamento de vidrio."),
 ]
 
 # What each price includes (venta, renta)
@@ -278,10 +278,11 @@ COLLECTION_TREE = {
 
 # Colecciones sin fotos de piezas: lista de lo que incluye
 ITEMS = {
-    "Crystal Tree": ["Colgante de acrílico", "Follaje de brillantina", "Set de 6 velas con cristal colgando", "Ornamento de acrílico", "Ornamento de vidrio", "Manta de piel vegana"],
 }
 
 # Precio extra de venta (etiqueta, precio, detalle)
 EXTRA_PRICE = {
     "Crystal Tree": ("Venta solo árbol", 28000, "Sin cascanueces ni estrella LED"),
 }
+
+PIECES["Crystal Tree"] = ["778740835cf8bb8637290cacfdcbdaf6.png", "feb2d434a90e39a64cd1ea101e06a6be.png", "73a68d65d2c03e3f77c25dbff161cff7.png", "c28dc620bd7ec9762320555d0ff3e9b4.png", "ab509c6036417a0bb65e65df84ac99cc.png", "5d9b0c6414f5015b73975d21241163d4.png"]
