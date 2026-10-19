@@ -740,6 +740,10 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 .feat{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
 @media (max-width:820px){.feat{grid-template-columns:none}}
 @media (max-width:640px){.pcs-items{display:flex!important}.items{grid-template-columns:1fr}.items li{font-size:14px;padding:9px 4px 9px 24px}.items li::before{top:9px}}
+
+/* piezas: la foto siempre dentro del cuadro */
+.piece{overflow:hidden}
+.piece img{position:absolute;left:12%;right:12%;top:10%;bottom:22%;width:76%;height:68%;max-width:none;max-height:none;object-fit:contain}
 </style>
 </head>
 <body>
