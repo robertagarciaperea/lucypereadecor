@@ -12,7 +12,7 @@ COLLECTIONS = [
     ("Ralph Lauren Style", "ccfa56f8", "Árbol Hudson Fraser de 3.00 m", 85000, 32000, ""),
     ("Frostbite", "ab12581c", "Árbol Sierra Nevada de 2.60 m", 65000, 30000, ""),
     ("Burgundy Cranberry", "08c15db3", "Árbol Hudson Natural Fraser de 2.28 m", 65000, 26000, ""),
-    ("Crystal Tree", "img/crystal-tree.jpg", "Árbol Sierra Nevada CL Grande", 46000, 25000, "También incluye ornamento de acrílico y ornamento de vidrio."),
+    ("Crystal Tree", "img/crystal-tree.jpg", "Árbol Sierra Nevada CL Grande", 46000, 25000, ""),
 ]
 
 # What each price includes (venta, renta)
@@ -113,6 +113,12 @@ ESFERAS = [
     ("Moño burgundy de terciopelo con clip", [("30 × 28 cm", 190)], "9b2f0ea8", ""),
     ("Moño rojo de terciopelo con clip", [("30 × 28 cm", 190)], "96412652", ""),
     ("Moño verde de terciopelo con clip", [("30 × 28 cm", 190)], "2dc76d08", ""),
+    ("Paleta brillosa rojo con blanco", [("60 cm diám", 900)], "7a609603", ""),
+    ("Dulces candy rosa, azul y verde", [("33 cm largo (por pieza)", 680)], {'g': [('a89c94e8', 26.75, 4.52, 73.25), ('62e6862b', 0.0, 15.48, 61.69), ('e57dac91', 18.8, 42.38, 58.31), ('a89c94e8', 15.66, 0.0, 81.2)], 'ar': 0.9881}, ""),
+    ("Candy cane brillosos tono pastel", [("28 cm alto", 420)], {'g': [('7803d833', 19.26, 0.0, 80.74), ('52796620', 0.0, 32.59, 86.48)], 'ar': 0.7796}, ""),
+    ("Ornamento de acrílico tipo estalactita", [("36 cm largo", 170)], "10279f97", ""),
+    ("Ornamento de acrílico tipo estalactita · modelo 2", [("36 cm largo", 150)], "4235f2bc", ""),
+    ("Ornamento de cristal tipo estalactita", [("36 cm largo", 140)], "c69e4e4f", ""),
 ]
 
 FOLLAJE = [
@@ -285,4 +291,4 @@ EXTRA_PRICE = {
     "Crystal Tree": ("Venta solo árbol", 28000, "Sin cascanueces ni estrella LED"),
 }
 
-PIECES["Crystal Tree"] = ["778740835cf8bb8637290cacfdcbdaf6.png", "feb2d434a90e39a64cd1ea101e06a6be.png", "73a68d65d2c03e3f77c25dbff161cff7.png", "c28dc620bd7ec9762320555d0ff3e9b4.png", "ab509c6036417a0bb65e65df84ac99cc.png", "5d9b0c6414f5015b73975d21241163d4.png"]
+PIECES["Crystal Tree"] = ["10279f97bd3f864f842b0a47a9e89067.png", "c69e4e4fd627912e73f1c943b6b98c21.png", "778740835cf8bb8637290cacfdcbdaf6.png", "feb2d434a90e39a64cd1ea101e06a6be.png", "73a68d65d2c03e3f77c25dbff161cff7.png", "c28dc620bd7ec9762320555d0ff3e9b4.png", "ab509c6036417a0bb65e65df84ac99cc.png", "5d9b0c6414f5015b73975d21241163d4.png"]

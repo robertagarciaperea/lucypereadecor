@@ -744,6 +744,9 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 /* piezas: la foto siempre dentro del cuadro */
 .piece{overflow:hidden}
 .piece img{position:absolute;left:12%;right:12%;top:10%;bottom:22%;width:76%;height:68%;max-width:none;max-height:none;object-fit:contain}
+
+.card .img .grp{position:relative;display:block;height:100%;max-width:100%;margin:0 auto}
+.card .img .grp img{position:absolute;height:auto;max-width:none;max-height:none}
 </style>
 </head>
 <body>
@@ -1045,7 +1048,7 @@ function card(p, i){
   const rows = p.s.map(([size, price]) => `<li><i>${esc(size)}</i><b>${fmt(price)}</b></li>`).join("");
   const name = esc(p.n).replace(/(\S+)$/, '<span class="hi">$1</span>');
   return `<article class="card rv">
-    <div class="img"><img loading="lazy" src="${IMG + p.i}" alt="${esc(p.n)}" onerror="this.style.visibility='hidden'"></div>
+    <div class="img">${p.g ? `<span class="grp" role="img" aria-label="${esc(p.n)}" style="aspect-ratio:${p.ar}">${p.g.map(([f,l,tp,w]) => `<img loading="lazy" src="${IMG + f}" alt="" style="left:${l}%;top:${tp}%;width:${w}%">`).join("")}</span>` : `<img loading="lazy" src="${IMG + p.i}" alt="${esc(p.n)}" onerror="this.style.visibility='hidden'">`}</div>
     <h3>${name}</h3><ul>${rows}</ul>
     <a class="ask" target="_blank" rel="noopener" href="${wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + " " + fmt(x[1])).join(", ") + ").")}">Pedir</a>
   </article>`;

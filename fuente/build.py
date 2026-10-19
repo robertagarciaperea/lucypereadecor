@@ -15,7 +15,10 @@ def img(prefix):
 def items(lst):
     out = []
     for n, s, i, _ in lst:
-        out.append({"n": n, "s": [[a, b] for a, b in s], "i": img(i)})
+        if isinstance(i, dict):
+            out.append({"n": n, "s": [[a, b] for a, b in s], "g": [[img(h), l, t, w] for h, l, t, w in i["g"]], "ar": i["ar"]})
+        else:
+            out.append({"n": n, "s": [[a, b] for a, b in s], "i": img(i)})
     return out
 
 TREES = {n: {"n": n, "s": s[0][0], "i": img(i)} for n, s, i, _ in ARBOLES}
