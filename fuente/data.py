@@ -202,7 +202,7 @@ DECORACIONES = [
     ("Cascanueces dorado de resina", [("141 cm alto", 14000)], "d6b08cb1", ""),
     ("Cascanueces rojo y verde con dorado de poliresina", [("91.44 cm alto", 7000)], "821095af", ""),
     ("Cascanueces verde de terciopelo", [("72 cm alto", 1700)], "9551042a", ""),
-    ("Cascanueces rojo de terciopelo", [("72 cm alto", 1700)], "img/cascanueces-rojo-terciopelo.webp", ""),
+    ("Cascanueces rojo de terciopelo", [("72 cm alto", 1700)], "img/cascanueces-rojo-terciopelo.webp?v=2", ""),
     ("Set de 3 esferas de alambre plateado con luces LED cálidas", [("21, 38 y 52 cm alto", 14000)], "db95e793", ""),
     ("Set de 3 esferas de ratán y sisal con glitter", [("21, 38 y 52 cm alto", 9400)], "3883a5ce", ""),
     ("Set de 3 cebollas de ratán y sisal con glitter", [("21, 38 y 52 cm alto", 3750)], "8ec76a97", ""),
