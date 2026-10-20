@@ -749,6 +749,77 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 .card .img .grp img{position:absolute;height:auto;max-width:none;max-height:none}
 
 .sr-more{color:#F4D9A6;font-style:normal;font:600 11px/1 var(--label);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;text-decoration:none;border-bottom:1px solid rgba(244,217,166,.5);margin-left:6px}
+
+/* ===== Foto editorial (árbol en ventanal) ===== */
+.spread{padding:8px max(20px, env(safe-area-inset-left,0px)) 56px}
+.sp-fig{position:relative;margin:0 auto;max-width:1400px;overflow:hidden;background:#1a140c}
+.sp-fig img{width:100%;height:min(78vh,760px);min-height:520px;object-fit:cover;object-position:50% 40%}
+.sp-fig::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,246,232,.55);pointer-events:none}
+.sp-fig::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,12,6,.78) 0%,rgba(18,12,6,.45) 32%,rgba(18,12,6,0) 58%);pointer-events:none;z-index:1}
+.sp-page{position:absolute;top:30px;right:34px;z-index:2;color:rgba(255,246,232,.85);font-size:10px}
+.sp-txt{position:absolute;z-index:2;left:clamp(34px,5vw,72px);bottom:clamp(40px,7vh,80px);max-width:400px;color:var(--cream)}
+.sp-kick{color:#E8C987;margin:0 0 14px;font-size:10.5px}
+.sp-txt h2{font-size:clamp(44px,5.2vw,74px);font-weight:500;line-height:.95;text-transform:uppercase;letter-spacing:.02em}
+.sp-txt h2 em{display:block;text-transform:none;letter-spacing:0;color:#F4D9A6;font-weight:400}
+.sp-dek{font-style:italic;font-size:18px;line-height:1.5;margin:16px 0 24px;color:rgba(255,246,232,.92)}
+.sp-ctas{display:flex;flex-wrap:wrap;gap:10px}
+.sp-btn{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.sp-btn:hover{background:#E8C987;border-color:#E8C987}
+.sp-ghost{background:transparent;color:var(--cream);border-color:rgba(255,246,232,.7)}
+.sp-ghost:hover{background:var(--cream);color:var(--ink)}
+@media (max-width:640px){
+  .spread{padding:0 0 36px}
+  .sp-fig{background:#16110a}
+  .sp-fig::before{display:none}
+  .sp-fig img{height:auto;min-height:0;aspect-ratio:4/5;object-position:50% 30%}
+  .sp-fig::after{inset:10px}
+  .sp-page{top:22px;right:22px;font-size:8.5px}
+  .sp-txt{position:relative;left:auto;bottom:auto;max-width:none;padding:26px 26px 34px}
+  .sp-txt h2{font-size:40px}
+  .sp-dek{font-size:15px;margin:10px 0 18px}
+  .sp-ctas .btn{flex:1;padding:0 10px;font-size:10px;letter-spacing:.12em;min-height:44px}
+}
+
+/* ===== Portada con foto grande ===== */
+.cover.hero{position:relative;padding:8px max(20px, env(safe-area-inset-left,0px)) 56px;max-width:1440px;margin:0 auto}
+.hero-media{position:absolute;inset:8px max(20px, env(safe-area-inset-left,0px)) 56px;overflow:hidden;background:#1a140c}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.hero-media::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,12,6,.86) 0%,rgba(18,12,6,.62) 34%,rgba(18,12,6,.08) 62%,rgba(18,12,6,0) 75%)}
+.hero-media::after{content:"";position:absolute;inset:14px;z-index:2;border:1px solid rgba(255,246,232,.55);pointer-events:none}
+.hero-page{position:absolute;top:30px;right:34px;z-index:3;color:rgba(255,246,232,.85);font-size:10px}
+.hero .stamp{position:absolute;left:auto;top:auto;right:clamp(90px,8vw,130px);bottom:clamp(36px,6vh,64px);z-index:3}
+.hero-copy{position:relative;z-index:2;min-height:min(88vh,820px);max-width:600px;padding:clamp(40px,6vh,72px) 0 clamp(40px,6vh,64px) clamp(34px,5vw,72px);display:flex;flex-direction:column;justify-content:center;color:var(--cream)}
+.hero .news{background:rgba(255,246,232,.95);border-color:var(--cream);align-self:flex-start}
+.hero .kicker{color:#F4D9A6}
+.hero h1 .caps,.hero h1 .yr{color:var(--cream)}
+.hero h1 em{color:#F4D9A6}
+.hero .dek{color:rgba(255,246,232,.92);margin:22px 0 26px}
+.hero .ctas .btn-line{color:var(--cream);border-color:rgba(255,246,232,.75)}
+.hero .ctas .btn-line:hover{background:var(--cream);color:var(--ink)}
+.hero .coverage{background:rgba(18,12,6,.45);border:1px solid rgba(255,246,232,.3);border-left:4px solid #E8C987;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hero .coverage p{color:var(--cream)}
+.hero .coverage b{color:#F4D9A6}
+.hero .coverage svg{color:#F4D9A6}
+@media (max-width:640px){
+  .cover.hero{padding:0 0 32px}
+  .cover.hero::before{content:"";position:absolute;inset:0 0 32px 0;background:#16110a}
+  .hero-media{position:absolute;inset:0 0 auto 0;aspect-ratio:4/5;background:transparent;overflow:visible}
+  .hero-media img{object-position:50% 30%}
+  .hero-media::before{display:block;background:linear-gradient(180deg,rgba(22,17,10,0) 0%,rgba(22,17,10,0) 45%,rgba(22,17,10,.75) 75%,#16110a 100%)}
+  .hero-media::after{display:none}
+  .cover.hero::after{content:"";position:absolute;inset:10px 10px 42px 10px;border:1px solid rgba(255,246,232,.5);pointer-events:none;z-index:3}
+  .hero-media::after{inset:10px}
+  .hero-page{top:22px;right:22px;font-size:8.5px}
+  .hero .stamp{display:flex!important;left:20px;right:auto;top:20px;bottom:auto;width:92px;height:92px;padding:8px}
+  .hero .stamp b{font-size:18px}
+  .hero .stamp span{font-size:7px}
+  .hero-copy{min-height:0;max-width:none;background:transparent;padding:min(78vw,420px) 22px 40px;text-align:center;align-items:center}
+  .hero .news{align-self:center}
+  .hero h1 .caps,.hero h1 .yr,.hero h1 em{text-shadow:0 2px 14px rgba(0,0,0,.45)}
+  .hero .ctas{justify-content:center}
+  .hero .ctas .btn-line{border:0;text-decoration:underline}
+  .hero .coverage{text-align:left;width:100%;padding:12px 14px}
+}
 </style>
 </head>
 <body>
@@ -848,9 +919,16 @@ body.menu-open{overflow:hidden}
 </header>
 
 <main id="inicio">
-  <section class="cover">
-    <div class="wrap cover-grid">
-      <div>
+  <section class="cover hero">
+    <div class="hero-media">
+      <picture>
+        <source media="(max-width:640px)" srcset="/img/arbol-ventana-m.jpg">
+        <img src="/img/arbol-ventana.jpg" alt="Árbol vestido en dorado, negro y blanco frente a un ventanal, diseñado e instalado por Lucy Perea Decor" width="2000" height="1333" fetchpriority="high">
+      </picture>
+      <span class="hero-page label" aria-hidden="true">Edición Navidad 2026</span>
+      <div class="stamp" role="note"><span>Instalación</span><b>¡gratis!</b><span>en compras de<br>$50,000 o más</span></div>
+    </div>
+    <div class="hero-copy">
         <a class="news" href="#aromas"><span class="news-pics" aria-hidden="true"><picture><source srcset="img/bruma-cuento-de-navidad-mini.webp" type="image/webp"><img src="img/bruma-cuento-de-navidad-mini.png" alt="" width="34" height="60"></picture></span><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños <span class="news-long">con Bruma Scent</span></span><span class="news-go" aria-hidden="true">→</span></a>
         <p class="kicker label">Venta · Renta · Instalación</p>
         <h1><span class="caps">Catálogo de</span><em>Navidad</em><span class="yr">2026</span></h1>
@@ -863,16 +941,6 @@ body.menu-open{overflow:hidden}
           <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="10" r="2.6" fill="#fff"/></svg><p><b>Instalamos</b> en Querétaro, Ciudad de México y algunas zonas del Estado de México.</p></div>
           <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" fill="currentColor"/><circle cx="7" cy="17.5" r="2" fill="currentColor" stroke="#fff" stroke-width="1.2"/><circle cx="17" cy="17.5" r="2" fill="currentColor" stroke="#fff" stroke-width="1.2"/></svg><p><b>Envíos</b> a toda la República Mexicana.</p></div>
         </div>
-      </div>
-      <div class="photos">
-        <figure class="frame"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/3a75dc378b048fc74fa11a61054d62e1.jpg" alt="Árbol de la colección Golden Forest"><figcaption>Colección Golden Forest</figcaption></figure>
-        <div class="stack">
-          <figure class="frame"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ab12581c10ff9217390c2db64b5849b2.jpg" alt="Árbol de la colección Frostbite"><figcaption>Frostbite</figcaption></figure>
-          <figure class="frame"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/08c15db36af9b38c6b895abc22e3c094.jpg" alt="Árbol de la colección Burgundy Cranberry"><figcaption>Burgundy Cranberry</figcaption></figure>
-        </div>
-        <div class="burst" aria-hidden="true"><span>Nuevo<b>2026</b></span></div>
-        <div class="stamp" role="note"><span>Instalación</span><b>¡gratis!</b><span>en compras de<br>$50,000 o más</span></div>
-      </div>
     </div>
   </section>
 
