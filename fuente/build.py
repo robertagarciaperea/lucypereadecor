@@ -55,7 +55,7 @@ def _src(f): return "/" + f if f.startswith("img/") else BASE + f
 _ROOT = here.parent
 def _cut(f):
     k = "crystal-tree" if "crystal-tree" in f else f[:8]
-    return f"/img/col/{k}.webp" if (_ROOT / "img" / "col" / f"{k}.webp").exists() else None
+    return None
 def _thumb(c):
     cu = _cut(c["img"])
     return f'<span class="dc-plate"><img class="cut" src="{cu}" alt="" loading="lazy"></span>' if cu else f'<span class="dc-plate ph"><img src="{_src(c["img"])}" alt="" loading="lazy"></span>'
