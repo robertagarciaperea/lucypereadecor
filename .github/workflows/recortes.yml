@@ -13,29 +13,22 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - run: pip install "rembg[cpu]" pillow
-      - name: Descargar y recortar
+      - name: Recortar Burgundy
         run: |
-          mkdir -p raw img/col
-          for f in 3a75dc378b048fc74fa11a61054d62e1.jpg 096b76ee1a5ba315f92b5279ca1051d9.jpg 8504ef11e56d6efee37b707251d69afa.jpg cede4e6441b5855818933b23a0cfaa1f.jpg fd989278678cadb0092d288f9b98d81a.jpg 4888cd5fd5f5b80f069b78a5b1477129.jpg 5b4b0441be2cccdb835d11259a379c26.jpg ccfa56f8545d1dc06d09ad23a5e4d77f.jpg ab12581c10ff9217390c2db64b5849b2.jpg 08c15db36af9b38c6b895abc22e3c094.jpg; do
-            curl -sfL -o raw/$f "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/$f"
-          done
-          cp img/crystal-tree.jpg raw/crystal-tree.jpg
-          ls -la raw
+          mkdir -p raw img/col/fix
+          curl -sfL -o raw/b.jpg "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/08c15db36af9b38c6b895abc22e3c094.jpg"
           python - <<'PY'
-          import os
           from rembg import remove, new_session
           from PIL import Image
-          for model in ("birefnet-general", "birefnet-massive"):
-              s = new_session(model)
-              os.makedirs("img/col/" + model, exist_ok=True)
-              for f in sorted(os.listdir("raw")):
-                  im = Image.open("raw/" + f).convert("RGB")
-                  im.thumbnail((1200, 1200))
-                  out = remove(im, session=s)
-                  out = out.crop(out.getchannel("A").point(lambda a: 255 if a > 20 else 0).getbbox())
-                  out.save(f"img/col/{model}/" + f[:8] + ".png", optimize=True)
-                  print(model, f, out.size, flush=True)
+          im = Image.open("raw/b.jpg").convert("RGB")
+          w, h = im.size
+          im = im.crop((0, 0, int(w * 0.66), h))
+          im.thumbnail((1200, 1200))
+          for m in ("birefnet-general", "isnet-general-use"):
+              out = remove(im, session=new_session(m))
+              out = out.crop(out.getchannel("A").point(lambda a: 255 if a > 20 else 0).getbbox())
+              out.save(f"img/col/fix/08c15db3-{m}.png", optimize=True)
           PY
       - run: |
           git config user.name "Claude"; git config user.email "noreply@anthropic.com"
-          git add img/col && git commit -m "Recortes birefnet" && git push
+          git add img/col && git commit -m "Recorte burgundy" && git push
