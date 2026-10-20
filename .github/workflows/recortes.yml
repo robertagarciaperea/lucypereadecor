@@ -1,0 +1,40 @@
+name: recortes
+on:
+  push:
+    branches: [recortes]
+    paths: [".github/workflows/recortes.yml"]
+permissions:
+  contents: write
+jobs:
+  cut:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install "rembg[cpu]" pillow
+      - name: Descargar y recortar
+        run: |
+          mkdir -p raw img/col
+          for f in 3a75dc378b048fc74fa11a61054d62e1.jpg 096b76ee1a5ba315f92b5279ca1051d9.jpg 8504ef11e56d6efee37b707251d69afa.jpg cede4e6441b5855818933b23a0cfaa1f.jpg fd989278678cadb0092d288f9b98d81a.jpg 4888cd5fd5f5b80f069b78a5b1477129.jpg 5b4b0441be2cccdb835d11259a379c26.jpg ccfa56f8545d1dc06d09ad23a5e4d77f.jpg ab12581c10ff9217390c2db64b5849b2.jpg 08c15db36af9b38c6b895abc22e3c094.jpg; do
+            curl -sfL -o raw/$f "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/$f"
+          done
+          cp img/crystal-tree.jpg raw/crystal-tree.jpg
+          ls -la raw
+          python - <<'PY'
+          import os
+          from rembg import remove, new_session
+          from PIL import Image
+          s = new_session("isnet-general-use")
+          for f in sorted(os.listdir("raw")):
+              im = Image.open("raw/" + f).convert("RGB")
+              im.thumbnail((1400, 1400))
+              out = remove(im, session=s, alpha_matting=True, alpha_matting_foreground_threshold=240, alpha_matting_background_threshold=15, alpha_matting_erode_size=8)
+              out = out.crop(out.getchannel("A").point(lambda a: 255 if a > 20 else 0).getbbox())
+              out.save("img/col/" + f.rsplit(".", 1)[0][:8] + ".png", optimize=True)
+              im.save("img/col/" + f.rsplit(".", 1)[0][:8] + "-src.jpg", quality=85)
+              print(f, out.size)
+          PY
+      - run: |
+          git config user.name "Claude"; git config user.email "noreply@anthropic.com"
+          git add img/col && git commit -m "Recortes de colecciones (rembg)" && git push
