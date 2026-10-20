@@ -66,6 +66,8 @@ def _bx(c):
     return f'<a class="bx" href="/colecciones/#{_slug(c["name"])}"><img src="{_src(c["img"])}" alt="Colección {c["name"]}" loading="lazy"><span class="bx-t">{nw}<b>{c["name"]}</b><small>{price}</small></span></a>'
 _new = [c for c in data["collections"] if c["new"]][:5]
 _rest = [c for c in data["collections"] if c not in _new]
+_ord = [c for c in data["collections"] if c["new"]] + [c for c in data["collections"] if not c["new"]]
+STRIPS = "".join(f'<img src="{_src(c["img"])}" alt="" loading="lazy">' for c in _ord)
 BENTO = "".join(_bx(c) for c in _new)
 MORE = "".join(_bx(c) for c in _rest)
 CATIMG = {"arboles": "04041766", "esferas": "bb7711bd", "follaje": "96412652", "listones": "39b7fe1d", "decoraciones": "d6b08cb1"}
@@ -73,7 +75,7 @@ CATTILES = "".join(f'<a class="dk-t" href="/catalogo/#cat-{c["id"]}"><span class
 MINSALE = "$" + f'{min(c["sale"] for c in data["collections"]):,}'
 MINRENT = "$" + f'{min(c["rent"] for c in data["collections"] if c["rent"]):,}'
 html = (html.replace("__NCOL__", str(len(data["collections"]))).replace("__NPZ__", str(NPZ))
-            .replace("__COLTHUMBS__", COLTHUMBS).replace("__BENTO__", BENTO).replace("__MORE__", MORE).replace("__CATTILES__", CATTILES)
+            .replace("__COLTHUMBS__", COLTHUMBS).replace("__BENTO__", BENTO).replace("__STRIPS__", STRIPS).replace("__MORE__", MORE).replace("__CATTILES__", CATTILES)
             .replace("__MINSALE__", MINSALE).replace("__MINRENT__", MINRENT))
 html = (html.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
             .replace("__WAICON__", WAICON).replace("__WABASE__", WA).replace("__WA__", WA)
