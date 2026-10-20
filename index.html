@@ -822,36 +822,61 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 }
 
 /* ===== Puertas a Colecciones y Catálogo ===== */
-.doors{padding-block:72px 40px}
-.doors-head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
-.doors-head .label{color:var(--red);margin:0}
-.doors-head h2{font-size:clamp(40px,5.4vw,72px);text-transform:uppercase;letter-spacing:.03em;font-weight:500}
-.doors-head h2 em{display:block;text-transform:none;letter-spacing:0;font-size:.5em;color:var(--red);font-weight:400;margin-top:.15em}
-.doors-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.door{position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--ink);background:var(--white);overflow:hidden;transition:transform .3s,box-shadow .3s}
-.door:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(29,27,25,.14)}
-.door-link{position:absolute;inset:0;z-index:1}
-.door-img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
-.door-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.door:hover .door-img img{transform:scale(1.04)}
-.door-txt{display:flex;flex-direction:column;gap:8px;padding:24px 26px 26px}
-.door-kick{color:var(--red);font-size:10.5px}
-.door-h{font-family:var(--display);font-size:clamp(40px,4.4vw,58px);line-height:1;text-transform:uppercase;letter-spacing:.03em;font-weight:500}
-.door-sub{font-style:italic;color:var(--muted);font-size:17px}
-.door-go{margin-top:8px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;padding:15px 22px;background:var(--red);color:#fff}
-.door-go i{font-style:normal;transition:transform .25s}
-.door:hover .door-go i{transform:translateX(4px)}
-.door-cat{background:#0E2621;color:var(--cream);border-color:#0E2621}
-.door-cat .door-kick{color:#D4B67C}
-.door-cat .door-sub{color:#AFC0B6}
-.door-cat .door-go{background:var(--cream);color:var(--ink)}
-.door-plates{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:radial-gradient(circle at 50% 50%,#1C463F 0%,#0E2621 70%)}
-.door-plates img{object-fit:contain;padding:18% 10%;filter:drop-shadow(0 10px 16px rgba(0,0,0,.4));transition:transform .5s}
-.door-cat:hover .door-plates img{transform:scale(1.06) rotate(-3deg)}
-.door-chips{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.door-chips a{font:600 10px/1 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);text-decoration:none;border:1px solid rgba(255,246,232,.4);border-radius:999px;padding:8px 11px;transition:background .2s,color .2s}
-.door-chips a:hover{background:var(--cream);color:var(--ink)}
-.door-go{position:relative;z-index:0}
+.door-col{padding-block:80px 72px}
+.door-col .col-head{margin-bottom:28px}
+.door-col .col-head .no{background:var(--red)}
+.dc-title{font-size:clamp(56px,8vw,112px)!important;text-transform:uppercase;letter-spacing:.03em}
+.dc-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.dc-photo{position:relative;display:block;text-decoration:none;transform:rotate(-1.2deg);transition:transform .35s}
+.dc-photo:hover{transform:rotate(0) translateY(-4px)}
+.dc-photo img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.dc-cap{display:block;font-style:italic;font-size:14px;color:var(--muted);text-align:center;margin-top:8px}
+.dc-info{display:flex;flex-direction:column;gap:20px;min-width:0}
+.dc-info .pieces-h{margin-top:6px}
+.dc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.dc-t{position:relative;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);overflow:hidden}
+.dc-t img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s}
+.dc-t:hover img{transform:scale(1.07)}
+.dc-t span{font:600 9.5px/1.25 var(--label);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 6px;background:var(--white)}
+.dc-t .nw{position:absolute;top:6px;left:6px;background:var(--red);color:#fff;border-radius:999px;padding:4px 7px;font-size:8px}
+.dc-btn{align-self:flex-start}
+.door-cat{background:#0E2621;color:var(--cream)}
+.door-cat .wrap{padding-block:72px 76px}
+.dk-open{border-bottom-color:rgba(255,246,232,.35)!important}
+.dk-open h2{color:var(--cream)}
+.dk-open h2 em{color:#F4C9C2}
+.dk-open p{color:#C9DCCD;font-style:italic}
+.dk-num{font-family:var(--display);font-style:normal;font-size:1.6em;color:#D4B67C;font-weight:500}
+.dk-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.dk-t{display:flex;flex-direction:column;text-decoration:none;color:var(--cream);border:1px solid rgba(212,182,124,.25);border-radius:6px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.dk-t:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,.45)}
+.dk-img{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 45%,#1C463F 0%,#0E2621 72%)}
+.dk-img img{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4));transition:transform .45s}
+.dk-t:hover .dk-img img{transform:scale(1.1) rotate(-4deg)}
+.dk-txt{padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px;text-align:center}
+.dk-txt b{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.1}
+.dk-txt small{font:600 10px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:#D4B67C}
+.dk-cta{text-align:center;margin-top:40px}
+.dk-btn{background:var(--cream);color:var(--ink);border-color:var(--cream);min-height:54px;padding:0 34px}
+.dk-btn:hover{background:#D4B67C;border-color:#D4B67C}
+@media (max-width:980px){.dk-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){.dc-body{grid-template-columns:1fr}.dc-photo{max-width:440px;margin:0 auto}}
+@media (max-width:640px){
+  .door-col{padding-block:48px 44px}
+  .dc-title{font-size:48px!important}
+  .dc-body{gap:28px}
+  .dc-photo{transform:none;padding:6px}
+  .dc-info .prices{flex-direction:row;flex-wrap:wrap;gap:10px 22px}
+  .dc-info .tag b{font-size:26px}
+  .dc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dc-btn{width:100%}
+  .door-cat .wrap{padding-block:48px 52px}
+  .dk-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .dk-grid .dk-t:last-child{grid-column:1 / -1}
+  .dk-grid .dk-t:last-child .dk-img{aspect-ratio:16/9}
+  .dk-txt b{font-size:19px}
+  .dk-btn{width:100%}
+}
 .sub-crumb{display:flex;align-items:center;gap:10px;padding-block:18px 6px;font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase}
 .sub-crumb a{color:var(--muted);text-decoration:none}
 .sub-crumb a:hover{color:var(--red)}
@@ -1005,35 +1030,41 @@ body.menu-open{overflow:hidden}
   <div class="ticker" role="marquee" aria-label="Avisos"><div class="track"><span>Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span><span aria-hidden="true">Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span></div></div>
 
   <!--DOORS-->
-  <section class="doors" aria-label="Colecciones y catálogo">
+  <section class="door-col" aria-label="Colecciones">
     <div class="wrap">
-      <div class="doors-head">
-        <p class="label">En esta edición</p>
-        <h2>Elige cómo <em>armar tu Navidad</em></h2>
-      </div>
-      <div class="doors-grid">
-        <a class="door door-col rv" href="/colecciones/">
-          <span class="door-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/08c15db36af9b38c6b895abc22e3c094.jpg" alt="Árbol de la colección Burgundy Cranberry" loading="lazy"></span>
-          <span class="door-txt">
-            <span class="label door-kick">11 colecciones · Nuevas 2026</span>
-            <span class="door-h">Colecciones</span>
-            <span class="door-sub">Árboles vestidos, listos para tu casa. Venta o renta con montaje incluido.</span>
-            <span class="door-go">Ver colecciones <i aria-hidden="true">→</i></span>
-          </span>
-        </a>
-        <div class="door door-cat rv">
-          <a class="door-link" href="/catalogo/" aria-label="Ver catálogo de piezas sueltas"></a>
-          <span class="door-img door-plates" aria-hidden="true"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d6b08cb1f5267ca8f0505f23d7672219.png" alt="" loading="lazy"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/bb7711bd7f8ffa3065b6e8ae6d69a48f.png" alt="" loading="lazy"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/96412652ca290b4179edaefa94f1d010.png" alt="" loading="lazy"></span>
-          <span class="door-txt">
-            <span class="label door-kick">206 piezas en existencia</span>
-            <span class="door-h">Catálogo</span>
-            <span class="door-sub">Piezas sueltas para crear tu propio estilo.</span>
-            <span class="door-chips"><a href="/catalogo/#cat-arboles">Árboles</a><a href="/catalogo/#cat-esferas">Esferas y ornamentos</a><a href="/catalogo/#cat-follaje">Follaje y moños</a><a href="/catalogo/#cat-listones">Listones</a><a href="/catalogo/#cat-decoraciones">Decoraciones</a></span>
-            <span class="door-go">Ver catálogo <i aria-hidden="true">→</i></span>
-          </span>
+      <header class="col-head">
+        <span class="no label">Nueva temporada 2026 · 11 colecciones</span>
+        <h3 class="dc-title">Colecciones</h3>
+        <p class="sub">Árboles vestidos, listos para tu casa</p>
+      </header>
+      <div class="dc-body">
+        <a class="ph frame rv dc-photo" href="/colecciones/"><span class="sticker" aria-hidden="true">Nuevo<b>2026</b></span><img src="/img/crystal-tree.jpg" alt="Colección Crystal Tree" loading="lazy"><span class="dc-cap">Crystal Tree, nueva en 2026</span></a>
+        <div class="dc-info">
+          <div class="prices">
+            <div class="tag"><b>11</b><span class="label">Colecciones</span><i class="inc">Listas para tu casa</i></div>
+            <div class="tag"><b>$46,000</b><span class="label">Venta desde</span><i class="inc">Con montaje</i></div>
+            <div class="tag"><b>$25,000</b><span class="label">Renta desde</span><i class="inc">Montaje y desmontaje</i></div>
+          </div>
+          <p class="incl-all">Todas incluyen bajo árbol y adornos abajo.</p>
+          <p class="pieces-h"><span class="label">Elige tu colección</span><span class="pc-count">toca para verla</span></p>
+          <div class="dc-grid"><a class="dc-t" href="/colecciones/#crystal-tree"><img src="/img/crystal-tree.jpg" alt="" loading="lazy"><i class="nw">2026</i><span>Crystal Tree</span></a><a class="dc-t" href="/colecciones/#forest-whisper"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/5b4b0441be2cccdb835d11259a379c26.jpg" alt="" loading="lazy"><i class="nw">2026</i><span>Forest Whisper</span></a><a class="dc-t" href="/colecciones/#burgundy-cranberry"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/08c15db36af9b38c6b895abc22e3c094.jpg" alt="" loading="lazy"><i class="nw">2026</i><span>Burgundy Cranberry</span></a><a class="dc-t" href="/colecciones/#ralph-lauren-style"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ccfa56f8545d1dc06d09ad23a5e4d77f.jpg" alt="" loading="lazy"><i class="nw">2026</i><span>Ralph Lauren Style</span></a><a class="dc-t" href="/colecciones/#frostbite"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ab12581c10ff9217390c2db64b5849b2.jpg" alt="" loading="lazy"><i class="nw">2026</i><span>Frostbite</span></a><a class="dc-t" href="/colecciones/#golden-forest"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/3a75dc378b048fc74fa11a61054d62e1.jpg" alt="" loading="lazy"><span>Golden Forest</span></a><a class="dc-t" href="/colecciones/#white-christmas"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/096b76ee1a5ba315f92b5279ca1051d9.jpg" alt="" loading="lazy"><span>White Christmas</span></a><a class="dc-t" href="/colecciones/#classic-christmas"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/8504ef11e56d6efee37b707251d69afa.jpg" alt="" loading="lazy"><span>Classic Christmas</span></a><a class="dc-t" href="/colecciones/#candy-land"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/cede4e6441b5855818933b23a0cfaa1f.jpg" alt="" loading="lazy"><span>Candy Land</span></a><a class="dc-t" href="/colecciones/#candy-cane"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/fd989278678cadb0092d288f9b98d81a.jpg" alt="" loading="lazy"><span>Candy Cane</span></a><a class="dc-t" href="/colecciones/#navy-blue"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/4888cd5fd5f5b80f069b78a5b1477129.jpg" alt="" loading="lazy"><span>Navy Blue</span></a></div>
+          <a class="btn btn-red dc-btn" href="/colecciones/">Ver todas las colecciones <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="door-cat" aria-label="Catálogo">
+    <div class="gingham gingham-green" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="opener dk-open">
+        <h2>Catálogo <em>piezas sueltas para tu propio estilo</em></h2>
+        <p><b class="dk-num">206</b> piezas en existencia: esferas, follaje, listones, cascanueces y más. Elige una categoría para empezar.</p>
+      </div>
+      <div class="dk-grid"><a class="dk-t" href="/catalogo/#cat-arboles"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/0404176679b3e8e63eebcde6d6010afb.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Árboles</b><small>15 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-esferas"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/bb7711bd7f8ffa3065b6e8ae6d69a48f.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Esferas y ornamentos</b><small>70 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-follaje"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/96412652ca290b4179edaefa94f1d010.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Follaje y moños</b><small>38 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-listones"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/39b7fe1dde4659e9292843cf981882a6.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Listones</b><small>31 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-decoraciones"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d6b08cb1f5267ca8f0505f23d7672219.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Decoraciones</b><small>52 piezas</small></span></a></div>
+      <div class="dk-cta"><a class="btn dk-btn" href="/catalogo/">Ver catálogo completo <span aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="gingham gingham-green" aria-hidden="true"></div>
   </section>
   <!--/DOORS-->
 
