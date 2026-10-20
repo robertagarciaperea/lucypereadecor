@@ -45,14 +45,55 @@ WAICON = ('<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden=
 html = here.joinpath("template.html").read_text()
 MENU = here.joinpath("menu.html").read_text()
 MAPS = "https://www.google.com/maps/search/?api=1&amp;query=Tlacote+116%2C+Villas+del+Mes%C3%B3n%2C+Juriquilla%2C+Quer%C3%A9taro"
-html = html.replace("__MENU__", MENU.replace("__HOME__", ""))
+MENU = (MENU.replace("__HOME__#colecciones", "/colecciones/").replace("__HOME__#catalogo", "/catalogo/")
+            .replace("__HOME__#cat-", "/catalogo/#cat-").replace("__HOME__", "/"))
+html = html.replace("__MENU__", MENU)
+NPZ = sum(len(c["items"]) for c in data["categories"])
+CATPICS = "".join(f'<img src="{BASE + img(h)}" alt="" loading="lazy">' for h in ("d6b08cb1", "bb7711bd", "96412652"))
+CATCHIPS = "".join(f'<a href="/catalogo/#cat-{c["id"]}">{c["name"]}</a>' for c in data["categories"])
+html = (html.replace("__NCOL__", str(len(data["collections"]))).replace("__NPZ__", str(NPZ))
+            .replace("__CATPICS__", CATPICS).replace("__CATCHIPS__", CATCHIPS))
 html = (html.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
             .replace("__WAICON__", WAICON).replace("__WABASE__", WA).replace("__WA__", WA)
             .replace("__IMGBASE__", BASE).replace("__LOGO__", BASE + img("0a86810f"))
             .replace("__HERO1__", BASE + img("3a75dc37")).replace("__HERO2__", BASE + img("ab12581c"))
             .replace("__HERO3__", BASE + img("08c15db3")))
 assert "__" not in re.sub(r"__[a-z]", "", html) or True
-here.parent.joinpath("index.html").write_text(html)
+full = html
+def part(name):
+    a = full.index(f"<!--{name}-->"); z = full.index(f"<!--/{name}-->") + len(f"<!--/{name}-->")
+    return a, z
+def strip(h, name):
+    a = h.index(f"  <!--{name}-->"); z = h.index(f"<!--/{name}-->") + len(f"<!--/{name}-->") + 1
+    return h[:a] + h[z:]
+def inner(name):
+    a, z = part(name); return full[a:z]
+def links_out(h):
+    h = (h.replace('href="#colecciones"', 'href="/colecciones/"').replace('href="#catalogo"', 'href="/catalogo/"')
+          .replace('href="#inicio"', 'href="/"'))
+    return h
+# Página principal: sin colecciones ni catálogo, con las "puertas"
+home = links_out(strip(strip(full, "COL"), "CAT"))
+here.parent.joinpath("index.html").write_text(home)
+# Subpáginas
+head = links_out(full[:full.index('<main id="inicio">')])
+tail = full[full.index("</main>"):]
+def subpage(folder, title, desc, crumb, sect, nxt_href, nxt_label, nxt_kick):
+    body = (f'<main id="inicio">\n  <div class="wrap sub-crumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><span>{crumb}</span></div>\n'
+            + inner(sect) + f'\n  <div class="wrap sub-next"><a href="{nxt_href}"><span class="label">{nxt_kick}</span><b>{nxt_label} <i aria-hidden="true">→</i></b></a></div>\n'
+            + inner("CONTACT") + "\n")
+    pg = (head.replace("<title>Lucy Perea Decor · Navidad 2026</title>", f"<title>{title} · Lucy Perea Decor</title>")
+              .replace('content="Árboles de Navidad vestidos, esferas, follaje, listones y decoración en existencia. Venta, renta e instalación en Querétaro."', f'content="{desc}"')
+          + body + tail)
+    ids = set(re.findall(r'id="([^"]+)"', pg))
+    pg = re.sub(r'href="#([\w-]+)"', lambda m: m.group(0) if m.group(1) in ids else f'href="/#{m.group(1)}"', pg)
+    here.parent.joinpath(folder).mkdir(exist_ok=True)
+    here.parent.joinpath(folder, "index.html").write_text(pg)
+subpage("colecciones", "Colecciones Navidad 2026", "Colecciones de árboles de Navidad vestidos de Lucy Perea Decor: venta y renta con montaje en Querétaro, CDMX y Estado de México.",
+        "Colecciones", "COL", "/catalogo/", "Ver catálogo", "¿Prefieres armar tu propio estilo?")
+subpage("catalogo", "Catálogo de piezas", "Catálogo de piezas sueltas de Navidad: árboles, esferas, follaje, listones y decoraciones en existencia. Lucy Perea Decor, Querétaro.",
+        "Catálogo", "CAT", "/colecciones/", "Ver colecciones", "¿Buscas un árbol ya vestido?")
+html = full
 
 # ---- Subpágina del showroom ----
 cut = html.index("\n", html.index(".ico{width:16px")) + 1

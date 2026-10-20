@@ -820,6 +820,50 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .hero .ctas .btn-line{border:0;text-decoration:underline}
   .hero .coverage{text-align:left;width:100%;padding:12px 14px}
 }
+
+/* ===== Puertas a Colecciones y Catálogo ===== */
+.doors{padding-block:72px 40px}
+.doors-head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.doors-head .label{color:var(--red);margin:0}
+.doors-head h2{font-size:clamp(40px,5.4vw,72px);text-transform:uppercase;letter-spacing:.03em;font-weight:500}
+.doors-head h2 em{display:block;text-transform:none;letter-spacing:0;font-size:.5em;color:var(--red);font-weight:400;margin-top:.15em}
+.doors-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.door{position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--ink);background:var(--white);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.door:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(29,27,25,.14)}
+.door-link{position:absolute;inset:0;z-index:1}
+.door-img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
+.door-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.door:hover .door-img img{transform:scale(1.04)}
+.door-txt{display:flex;flex-direction:column;gap:8px;padding:24px 26px 26px}
+.door-kick{color:var(--red);font-size:10.5px}
+.door-h{font-family:var(--display);font-size:clamp(40px,4.4vw,58px);line-height:1;text-transform:uppercase;letter-spacing:.03em;font-weight:500}
+.door-sub{font-style:italic;color:var(--muted);font-size:17px}
+.door-go{margin-top:8px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;padding:15px 22px;background:var(--red);color:#fff}
+.door-go i{font-style:normal;transition:transform .25s}
+.door:hover .door-go i{transform:translateX(4px)}
+.door-cat{background:#0E2621;color:var(--cream);border-color:#0E2621}
+.door-cat .door-kick{color:#D4B67C}
+.door-cat .door-sub{color:#AFC0B6}
+.door-cat .door-go{background:var(--cream);color:var(--ink)}
+.door-plates{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:radial-gradient(circle at 50% 50%,#1C463F 0%,#0E2621 70%)}
+.door-plates img{object-fit:contain;padding:18% 10%;filter:drop-shadow(0 10px 16px rgba(0,0,0,.4));transition:transform .5s}
+.door-cat:hover .door-plates img{transform:scale(1.06) rotate(-3deg)}
+.door-chips{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.door-chips a{font:600 10px/1 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);text-decoration:none;border:1px solid rgba(255,246,232,.4);border-radius:999px;padding:8px 11px;transition:background .2s,color .2s}
+.door-chips a:hover{background:var(--cream);color:var(--ink)}
+.door-go{position:relative;z-index:0}
+.sub-crumb{display:flex;align-items:center;gap:10px;padding-block:18px 6px;font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase}
+.sub-crumb a{color:var(--muted);text-decoration:none}
+.sub-crumb a:hover{color:var(--red)}
+.sub-crumb span{color:var(--ink)}
+.sub-next{padding-block:48px 72px;text-align:center}
+.sub-next a{display:inline-flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--ink)}
+.sub-next .label{color:var(--red)}
+.sub-next b{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.sub-next b i{font-style:normal;color:var(--red);transition:transform .25s;display:inline-block}
+.sub-next a:hover b i{transform:translateX(6px)}
+@media (max-width:760px){.doors-grid{grid-template-columns:1fr}}
+@media (max-width:640px){.doors{padding-block:48px 24px}.door-txt{padding:18px 18px 20px}.door-sub{font-size:15px}.door-go{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -854,7 +898,7 @@ __MENU__
       <div class="stamp" role="note"><span>Instalación</span><b>¡gratis!</b><span>en compras de<br>$50,000 o más</span></div>
     </div>
     <div class="hero-copy">
-        <a class="news" href="#aromas"><span class="news-pics" aria-hidden="true"><picture><source srcset="img/bruma-cuento-de-navidad-mini.webp" type="image/webp"><img src="img/bruma-cuento-de-navidad-mini.png" alt="" width="34" height="60"></picture></span><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños <span class="news-long">con Bruma Scent</span></span><span class="news-go" aria-hidden="true">→</span></a>
+        <a class="news" href="#aromas"><span class="news-pics" aria-hidden="true"><picture><source srcset="/img/bruma-cuento-de-navidad-mini.webp" type="image/webp"><img src="/img/bruma-cuento-de-navidad-mini.png" alt="" width="34" height="60"></picture></span><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños <span class="news-long">con Bruma Scent</span></span><span class="news-go" aria-hidden="true">→</span></a>
         <p class="kicker label">Venta · Renta · Instalación</p>
         <h1><span class="caps">Catálogo de</span><em>Navidad</em><span class="yr">2026</span></h1>
         <p class="dek">Árboles vestidos listos para tu casa, piezas sueltas para crear tu propio estilo y un equipo que lo instala por ti. Todos los artículos están en existencia.</p>
@@ -885,6 +929,39 @@ __MENU__
   <div class="gingham" aria-hidden="true"></div>
   <div class="ticker" role="marquee" aria-label="Avisos"><div class="track"><span>Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span><span aria-hidden="true">Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span></div></div>
 
+  <!--DOORS-->
+  <section class="doors" aria-label="Colecciones y catálogo">
+    <div class="wrap">
+      <div class="doors-head">
+        <p class="label">En esta edición</p>
+        <h2>Elige cómo <em>armar tu Navidad</em></h2>
+      </div>
+      <div class="doors-grid">
+        <a class="door door-col rv" href="/colecciones/">
+          <span class="door-img"><img src="__HERO3__" alt="Árbol de la colección Burgundy Cranberry" loading="lazy"></span>
+          <span class="door-txt">
+            <span class="label door-kick">__NCOL__ colecciones · Nuevas 2026</span>
+            <span class="door-h">Colecciones</span>
+            <span class="door-sub">Árboles vestidos, listos para tu casa. Venta o renta con montaje incluido.</span>
+            <span class="door-go">Ver colecciones <i aria-hidden="true">→</i></span>
+          </span>
+        </a>
+        <div class="door door-cat rv">
+          <a class="door-link" href="/catalogo/" aria-label="Ver catálogo de piezas sueltas"></a>
+          <span class="door-img door-plates" aria-hidden="true">__CATPICS__</span>
+          <span class="door-txt">
+            <span class="label door-kick">__NPZ__ piezas en existencia</span>
+            <span class="door-h">Catálogo</span>
+            <span class="door-sub">Piezas sueltas para crear tu propio estilo.</span>
+            <span class="door-chips">__CATCHIPS__</span>
+            <span class="door-go">Ver catálogo <i aria-hidden="true">→</i></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/DOORS-->
+  <!--COL-->
   <section id="colecciones">
     <div class="band band-red"><div class="wrap band-inner">
       <div class="opener">
@@ -910,6 +987,7 @@ __MENU__
       </div>
     </div>
   </section>
+  <!--/COL-->
 
   <section class="block aromas" id="aromas">
     <div class="wrap">
@@ -922,7 +1000,7 @@ __MENU__
       </div>
       <div class="aro-grid">
         <article class="aro rv">
-          <figure class="frame aro-ph"><picture><source srcset="img/bruma-cuento-de-navidad.webp" type="image/webp"><img loading="lazy" src="img/bruma-cuento-de-navidad.png" alt="Aromatizante Cuento de Navidad de Bruma Scent, botella ámbar de 250 ml" width="560" height="1000"></picture></figure>
+          <figure class="frame aro-ph"><picture><source srcset="/img/bruma-cuento-de-navidad.webp" type="image/webp"><img loading="lazy" src="/img/bruma-cuento-de-navidad.png" alt="Aromatizante Cuento de Navidad de Bruma Scent, botella ámbar de 250 ml" width="560" height="1000"></picture></figure>
           <div class="aro-info">
             <p class="label aro-brand">Bruma Scent × Lucy Perea Decor</p>
             <h3>Cuento de <em>Navidad</em></h3>
@@ -934,7 +1012,7 @@ __MENU__
           </div>
         </article>
         <article class="aro rv">
-          <figure class="frame aro-ph"><picture><source srcset="img/bruma-christmas-tree.webp" type="image/webp"><img loading="lazy" src="img/bruma-christmas-tree.png" alt="Aromatizante Christmas Tree de Bruma Scent, botella ámbar en spray" width="560" height="1000"></picture></figure>
+          <figure class="frame aro-ph"><picture><source srcset="/img/bruma-christmas-tree.webp" type="image/webp"><img loading="lazy" src="/img/bruma-christmas-tree.png" alt="Aromatizante Christmas Tree de Bruma Scent, botella ámbar en spray" width="560" height="1000"></picture></figure>
           <div class="aro-info">
             <p class="label aro-brand">Bruma Scent × Lucy Perea Decor</p>
             <h3>Christmas <em>Tree</em></h3>
@@ -949,6 +1027,7 @@ __MENU__
     </div>
   </section>
 
+  <!--CAT-->
   <section class="catalog" id="catalogo">
     <div class="band band-green"><div class="wrap band-inner">
         <div class="opener">
@@ -965,6 +1044,7 @@ __MENU__
       <div class="grid" id="grid"></div>
     </div>
   </section>
+  <!--/CAT-->
 
   <section class="block" id="instalacion">
     <div class="wrap">
@@ -994,6 +1074,7 @@ __MENU__
     </div>
   </section>
 
+  <!--CONTACT-->
   <div class="gingham" aria-hidden="true"></div>
   <section class="block contact" id="contacto">
     <div class="wrap">
@@ -1009,6 +1090,7 @@ __MENU__
       <p class="meta">Instalamos en Querétaro, Ciudad de México y algunas zonas del Estado de México. Envíos a toda la República según volumen. Visita nuestro showroom (solo con cita) en Tlacote 116, Villas del Mesón, Juriquilla, Querétaro. Síguenos en Instagram para ver las nuevas colecciones.</p>
     </div>
   </section>
+  <!--/CONTACT-->
 </main>
 
 <footer class="foot-band">
@@ -1027,11 +1109,12 @@ const wa = t => WA + "?text=" + encodeURIComponent(t);
 document.querySelectorAll("[data-wa]").forEach(a => a.href = wa(a.dataset.wa));
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const CODES = {"Golden Forest":"GF","White Christmas":"WC","Classic Christmas":"CC","Candy Land":"CL","Candy Cane":"CN","Navy Blue":"NB","Forest Whisper":"FW","Ralph Lauren Style":"RL","Frostbite":"FB","Burgundy Cranberry":"BC","Crystal Tree":"CT"};
-const src = f => /^(img\/|https?:)/.test(f) ? f : IMG + f;
+const src = f => /^https?:/.test(f) ? f : /^\/?img\//.test(f) ? "/" + f.replace(/^\//, "") : IMG + f;
 const pad = n => String(n).padStart(2, "0");
 const code = (c, j) => CODES[c.name] + "-" + pad(j + 1);
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
+if (document.getElementById("cols")) {
 // Featured new-season collections
 document.getElementById("feat").innerHTML = DATA.collections.filter(c => c.new).map(c => `
   <a class="fcard" href="#${slug(c.name)}">
@@ -1095,6 +1178,9 @@ document.getElementById("cols").addEventListener("click", e => {
 document.getElementById("lbx").addEventListener("click", () => lb.close());
 lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
 
+}
+
+if (document.getElementById("icards")) {
 // Installation cards: tree drawn to the height range's top
 const topH = r => parseFloat(r[0].replace(",", ".").split("–").pop());
 const maxH = Math.max(...DATA.install.map(topH));
@@ -1108,6 +1194,9 @@ document.getElementById("icards").innerHTML = DATA.install.map(r => {
   </div>`;
 }).join("");
 
+}
+
+if (document.getElementById("tabs")) {
 // Catalog
 const cats = DATA.categories;
 let current = cats[0].id;
@@ -1160,14 +1249,16 @@ function openCat(){
 window.addEventListener("hashchange", openCat);
 openCat();
 
+}
+
 // Gentle reveal: content is visible at rest; it only settles into place when scrolled to
 document.documentElement.classList.add("js");
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {rootMargin: "0px 0px -8% 0px"}) : null;
 const watch = () => io && document.querySelectorAll(".rv:not(.in)").forEach(el => io.observe(el));
-watch(); new MutationObserver(watch).observe(document.getElementById("grid"), {childList: true});
+watch(); if (document.getElementById("grid")) new MutationObserver(watch).observe(document.getElementById("grid"), {childList: true});
 
 // Copy number
-document.getElementById("copy").addEventListener("click", async e => {
+document.getElementById("copy")?.addEventListener("click", async e => {
   const btn = e.currentTarget;
   try { await navigator.clipboard.writeText("5569695206"); btn.textContent = "Número copiado"; }
   catch { const r = document.createRange(); r.selectNodeContents(document.getElementById("num")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Número seleccionado"; }
