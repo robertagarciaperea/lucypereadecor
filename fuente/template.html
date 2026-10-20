@@ -820,6 +820,194 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .hero .ctas .btn-line{border:0;text-decoration:underline}
   .hero .coverage{text-align:left;width:100%;padding:12px 14px}
 }
+
+/* ===== Puertas a Colecciones y Catálogo ===== */
+.door-col{padding-block:80px 72px}
+.door-col .col-head{margin-bottom:28px}
+.door-col .col-head .no{background:var(--red)}
+.dc-title{font-size:clamp(56px,8vw,112px)!important;text-transform:uppercase;letter-spacing:.03em}
+.dc-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.dc-photo{position:relative;display:block;text-decoration:none;transform:rotate(-1.2deg);transition:transform .35s}
+.dc-photo:hover{transform:rotate(0) translateY(-4px)}
+.dc-photo img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.dc-cap{display:block;font-style:italic;font-size:14px;color:var(--muted);text-align:center;margin-top:8px}
+.dc-info{display:flex;flex-direction:column;gap:20px;min-width:0}
+.dc-info .pieces-h{margin-top:6px}
+.dc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.dc-t{position:relative;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);overflow:hidden}
+.dc-t img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s}
+.dc-t:hover img{transform:scale(1.07)}
+.dc-t span{font:600 9.5px/1.25 var(--label);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 6px;background:var(--white)}
+.dc-t .nw{position:absolute;top:6px;left:6px;background:var(--red);color:#fff;border-radius:999px;padding:4px 7px;font-size:8px}
+.dc-btn{align-self:flex-start}
+.door-cat{background:#0E2621;color:var(--cream)}
+.door-cat .wrap{padding-block:72px 76px}
+.dk-open{border-bottom-color:rgba(255,246,232,.35)!important}
+.dk-open h2{color:var(--cream)}
+.dk-open h2 em{color:#F4C9C2}
+.dk-open p{color:#C9DCCD;font-style:italic}
+.dk-num{font-family:var(--display);font-style:normal;font-size:1.6em;color:#D4B67C;font-weight:500}
+.dk-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.dk-t{display:flex;flex-direction:column;text-decoration:none;color:var(--cream);border:1px solid rgba(212,182,124,.25);border-radius:6px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.dk-t:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,.45)}
+.dk-img{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 45%,#1C463F 0%,#0E2621 72%)}
+.dk-img img{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4));transition:transform .45s}
+.dk-t:hover .dk-img img{transform:scale(1.1) rotate(-4deg)}
+.dk-txt{padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px;text-align:center}
+.dk-txt b{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.1}
+.dk-txt small{font:600 10px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:#D4B67C}
+.dk-cta{text-align:center;margin-top:40px}
+.dk-btn{background:var(--cream);color:var(--ink);border-color:var(--cream);min-height:54px;padding:0 34px}
+.dk-btn:hover{background:#D4B67C;border-color:#D4B67C}
+@media (max-width:980px){.dk-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){.dc-body{grid-template-columns:1fr}.dc-photo{max-width:440px;margin:0 auto}}
+@media (max-width:640px){
+  .door-col{padding-block:48px 44px}
+  .dc-title{font-size:48px!important}
+  .dc-body{gap:28px}
+  .dc-photo{transform:none;padding:6px}
+  .dc-info .prices{flex-direction:row;flex-wrap:wrap;gap:10px 22px}
+  .dc-info .tag b{font-size:26px}
+  .dc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dc-btn{width:100%}
+  .door-cat .wrap{padding-block:48px 52px}
+  .dk-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .dk-grid .dk-t:last-child{grid-column:1 / -1}
+  .dk-grid .dk-t:last-child .dk-img{aspect-ratio:16/9}
+  .dk-txt b{font-size:19px}
+  .dk-btn{width:100%}
+}
+.sub-crumb{display:flex;align-items:center;gap:10px;padding-block:18px 6px;font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase}
+.sub-crumb a{color:var(--muted);text-decoration:none}
+.sub-crumb a:hover{color:var(--red)}
+.sub-crumb span{color:var(--ink)}
+.sub-next{padding-block:48px 72px;text-align:center}
+.sub-next a{display:inline-flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--ink)}
+.sub-next .label{color:var(--red)}
+.sub-next b{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.sub-next b i{font-style:normal;color:var(--red);transition:transform .25s;display:inline-block}
+.sub-next a:hover b i{transform:translateX(6px)}
+@media (max-width:760px){.doors-grid{grid-template-columns:1fr}}
+@media (max-width:640px){.doors{padding-block:48px 24px}.door-txt{padding:18px 18px 20px}.door-sub{font-size:15px}.door-go{width:100%;justify-content:center}}
+
+/* Colecciones con recortes */
+.dc-stage{position:relative;display:block;aspect-ratio:4/5;text-decoration:none;color:var(--ink)}
+.dc-glow{position:absolute;left:4%;right:4%;top:6%;bottom:9%;border-radius:50% 50% 8px 8px / 38% 38% 8px 8px;background:radial-gradient(circle at 50% 40%,#FFFFFF 0%,#F4ECDD 60%,#EADFCB 100%);border:1px solid var(--rule)}
+.dc-stage::after{content:"";position:absolute;left:14%;right:14%;bottom:8%;height:26px;border-radius:50%;background:radial-gradient(closest-side,rgba(60,40,20,.28),rgba(60,40,20,0));z-index:1}
+.dc-hero{position:absolute;z-index:3;left:50%;bottom:9%;height:80%;width:auto;max-width:none;transform:translateX(-50%);filter:drop-shadow(0 14px 18px rgba(60,40,20,.22));transition:transform .5s}
+.dc-stage:hover .dc-hero{transform:translateX(-50%) scale(1.03)}
+.dc-mini{position:absolute;z-index:2;bottom:9%;height:48%}
+.dc-mini img{height:100%;width:auto;max-width:none;filter:drop-shadow(0 10px 12px rgba(60,40,20,.2)) saturate(.95)}
+.dc-mini.a{left:-2%}
+.dc-mini.b{right:-4%}
+.dc-stage .sticker{top:2%;right:6%;left:auto;z-index:4}
+.dc-stage .dc-cap{position:absolute;z-index:4;left:0;right:0;bottom:0;text-align:center;font-style:italic;font-size:15px;color:var(--muted)}
+.dc-stage .dc-cap b{font-style:normal;font-family:var(--display);font-weight:500;color:var(--ink);font-size:20px}
+.dc-t{background:var(--white)}
+.dc-plate{display:flex;align-items:flex-end;justify-content:center;aspect-ratio:1;padding:10px 8px 4px;background:radial-gradient(circle at 50% 42%,#FFFFFF 0%,#F6EFE3 62%,#EFE5D3 100%);overflow:hidden}
+.dc-plate img.cut{width:auto!important;height:100%!important;max-width:100%;object-fit:contain!important;aspect-ratio:auto!important;filter:drop-shadow(0 8px 10px rgba(60,40,20,.2));transition:transform .45s}
+.dc-t:hover .dc-plate img.cut{transform:scale(1.08) translateY(-3px)}
+.dc-plate.ph{padding:0}
+.dc-plate.ph img{width:100%;height:100%;object-fit:cover}
+.dc-t span:last-child{border-top:1px solid var(--rule)}
+@media (max-width:860px){.dc-stage{max-width:460px;margin:0 auto;width:100%}}
+@media (max-width:640px){.dc-stage .dc-cap b{font-size:17px}.dc-stage .dc-cap{font-size:13px}}
+
+/* Colecciones con fotos en arco */
+.dc-stage{aspect-ratio:auto!important;padding:0 0 40px}
+.dc-arch{display:block;position:relative;aspect-ratio:3/4;border-radius:999px 999px 6px 6px;overflow:hidden;border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:8px;margin:9px;background:var(--paper-2)}
+.dc-arch img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.dc-stage:hover .dc-arch img{transform:scale(1.04)}
+.dc-stage .dc-cap{bottom:0}
+.dc-stage .sticker{top:18%!important;right:-4px!important}
+.dc-plate{padding:10px 12px 0!important;background:var(--white)!important;align-items:stretch!important}
+.dc-plate img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:999px 999px 0 0;border:1px solid var(--rule);border-bottom:0;transition:transform .45s,filter .45s}
+.dc-t:hover .dc-plate img{transform:translateY(-3px)}
+
+/* ===== Colecciones: mosaico de revista ===== */
+.door-col .col-head{margin-bottom:18px}
+.bx-stats{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 30px;padding:14px 0 18px;margin-bottom:26px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);font:600 11px/1.3 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bx-stats b{font:700 26px/1 var(--text);letter-spacing:0;color:var(--red);text-transform:none;margin:0 4px}
+.bx-note{margin-left:auto;color:var(--green)}
+.bx-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;aspect-ratio:16/9}
+.bx{position:relative;display:block;overflow:hidden;text-decoration:none;color:var(--cream);background:#1a140c}
+.bx-grid .bx:first-child{grid-column:1 / span 2;grid-row:1 / span 2}
+.bx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.bx:hover img{transform:scale(1.05)}
+.bx::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,6,0) 45%,rgba(18,12,6,.82) 100%)}
+.bx::before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,246,232,.45);z-index:2;pointer-events:none}
+.bx-t{position:absolute;z-index:3;left:18px;right:18px;bottom:16px;display:flex;flex-direction:column;gap:4px}
+.bx-t .nw{align-self:flex-start;background:var(--red);color:#fff;border-radius:999px;padding:4px 9px;font:700 9px/1 var(--label);letter-spacing:.14em;text-transform:uppercase}
+.bx-t b{font-family:var(--display);font-weight:500;font-size:clamp(20px,1.9vw,28px);line-height:1.05}
+.bx-grid .bx:first-child .bx-t b{font-size:clamp(34px,3.6vw,54px)}
+.bx-t small{font:600 10px/1.3 var(--label);letter-spacing:.12em;text-transform:uppercase;color:#F4D9A6}
+.bx-grid .bx:first-child .bx-t{left:28px;bottom:26px}
+.bx-grid .bx:first-child .bx-t small{font-size:11.5px}
+.bx-more{margin:40px 0 14px;color:var(--red)}
+.bx-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.bx-row .bx{aspect-ratio:3/4}
+.bx-row .bx-t{left:12px;right:12px;bottom:12px}
+.bx-row .bx-t b{font-size:18px}
+.bx-row .bx-t small{font-size:9px}
+.bx-cta{text-align:center;margin-top:36px}
+.bx-cta .btn{min-height:54px;padding:0 34px}
+@media (max-width:980px){.bx-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  .bx-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;aspect-ratio:auto}
+  .bx{aspect-ratio:3/4}
+  .bx-grid .bx:first-child{grid-column:1 / -1;grid-row:auto;aspect-ratio:4/5}
+  .bx-note{margin-left:0}
+}
+@media (max-width:640px){
+  .bx-stats{gap:6px 18px}.bx-stats b{font-size:22px}
+  .bx-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bx-row .bx:last-child:nth-child(odd){grid-column:1 / -1;aspect-ratio:16/10}
+  .bx-cta .btn{width:100%}
+  .bx-t b{font-size:20px}
+}
+
+/* Banner: ver todas las colecciones */
+.bx-bar{display:block;position:relative;left:50%;width:100vw;margin:40px 0 0 -50vw;background:var(--red);color:#fff;text-decoration:none;border-block:1px solid #E8C987;box-shadow:inset 0 4px 0 var(--red),inset 0 5px 0 rgba(244,217,166,.6),inset 0 -4px 0 var(--red),inset 0 -5px 0 rgba(244,217,166,.6);transition:background .25s}
+.bx-bar:hover{background:var(--red-dk)}
+.bx-bar-in{max-width:var(--max);margin:0 auto;padding:22px max(20px, env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:18px}
+.bx-bar-h{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.8vw,38px);line-height:1;text-transform:uppercase;letter-spacing:.06em}
+.bx-bar-h em{text-transform:none;letter-spacing:0;color:#F4D9A6}
+.bx-bar-go{font-size:clamp(24px,2.6vw,34px);color:#F4D9A6;transition:transform .25s}
+.bx-bar:hover .bx-bar-go{transform:translateX(8px)}
+@media (max-width:640px){.bx-bar{margin-top:30px}.bx-bar-in{padding:18px 16px;gap:10px}.bx-bar-h{font-size:21px;letter-spacing:.04em}}
+
+/* ===== Colecciones: banner de orilla a orilla ===== */
+.cb{padding:0!important;margin:56px 0 0}
+.cb-link{position:relative;display:block;min-height:min(86vh,760px);overflow:hidden;text-decoration:none;color:var(--cream);background:#16110a}
+.cb-strip{position:absolute;inset:0;display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:0}
+.cb-strip img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.cb-link:hover .cb-strip img{transform:scale(1.06)}
+.cb-shade{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 52%,rgba(18,12,6,.82) 0%,rgba(18,12,6,.55) 55%,rgba(18,12,6,.25) 100%)}
+.cb-link::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,246,232,.5);pointer-events:none}
+.cb-in{position:relative;z-index:2;min-height:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:80px 24px}
+.cb-no{background:var(--red);color:#fff;padding:8px 26px 8px 16px;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 50%,100% 100%,0 100%);font-size:11px}
+.cb-h{font-family:var(--display);font-weight:500;font-size:clamp(60px,10vw,150px);line-height:.95;text-transform:uppercase;letter-spacing:.04em;margin-top:8px}
+.cb-sub{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.6vw,34px);color:#F4D9A6}
+.cb-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 34px;margin-top:14px;font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,246,232,.85)}
+.cb-stats b{display:block;margin-top:8px;font:700 clamp(28px,3vw,40px)/1 var(--text);letter-spacing:0;color:#fff}
+.cb-note{color:#C9DCCD;font-size:10.5px;margin-top:6px}
+.cb-btn{margin-top:22px;display:inline-flex;align-items:center;gap:14px;background:var(--cream);color:var(--red);padding:18px 34px;font:700 12.5px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;transition:background .25s,color .25s}
+.cb-btn i{font-style:normal;font-size:18px;transition:transform .25s}
+.cb-link:hover .cb-btn{background:var(--red);color:#fff}
+.cb-link:hover .cb-btn i{transform:translateX(6px)}
+@media (max-width:760px){.cb-strip{grid-template-columns:repeat(4,minmax(0,1fr))}.cb-strip img:nth-child(n+5){display:none}}
+@media (max-width:640px){
+  .cb{margin-top:36px}
+  .cb-link{min-height:620px}
+  .cb-strip{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+  .cb-link::after{inset:10px}
+  .cb-in{padding:60px 20px}
+  .cb-h{font-size:42px;letter-spacing:.03em}
+  .cb-no{font-size:9.5px;letter-spacing:.12em;white-space:nowrap}
+  .cb-note{font-size:9px;letter-spacing:.1em}
+  .cb-stats{gap:6px 22px}
+  .cb-btn{width:100%;justify-content:center;padding:17px 14px;font-size:11px;letter-spacing:.14em}
+}
 </style>
 </head>
 <body>
@@ -854,7 +1042,7 @@ __MENU__
       <div class="stamp" role="note"><span>Instalación</span><b>¡gratis!</b><span>en compras de<br>$50,000 o más</span></div>
     </div>
     <div class="hero-copy">
-        <a class="news" href="#aromas"><span class="news-pics" aria-hidden="true"><picture><source srcset="img/bruma-cuento-de-navidad-mini.webp" type="image/webp"><img src="img/bruma-cuento-de-navidad-mini.png" alt="" width="34" height="60"></picture></span><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños <span class="news-long">con Bruma Scent</span></span><span class="news-go" aria-hidden="true">→</span></a>
+        <a class="news" href="#aromas"><span class="news-pics" aria-hidden="true"><picture><source srcset="/img/bruma-cuento-de-navidad-mini.webp" type="image/webp"><img src="/img/bruma-cuento-de-navidad-mini.png" alt="" width="34" height="60"></picture></span><span class="news-tag">Nuevo</span><span class="news-txt">Aromas navideños <span class="news-long">con Bruma Scent</span></span><span class="news-go" aria-hidden="true">→</span></a>
         <p class="kicker label">Venta · Renta · Instalación</p>
         <h1><span class="caps">Catálogo de</span><em>Navidad</em><span class="yr">2026</span></h1>
         <p class="dek">Árboles vestidos listos para tu casa, piezas sueltas para crear tu propio estilo y un equipo que lo instala por ti. Todos los artículos están en existencia.</p>
@@ -885,6 +1073,36 @@ __MENU__
   <div class="gingham" aria-hidden="true"></div>
   <div class="ticker" role="marquee" aria-label="Avisos"><div class="track"><span>Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span><span aria-hidden="true">Instalación gratis en compras de $50,000 o más <i>✳</i> Instalamos en Querétaro, CDMX y parte del Estado de México <i>✳</i> Envíos a toda la República <i>✳</i> Todo en existencia <i>✳</i> Renta con montaje y desmontaje incluidos <i>✳</i> Envío según volumen <i>✳</i> Sin costo de envío en punto de venta <i>✳</i></span></div></div>
 
+  <!--DOORS-->
+  <section class="door-col cb" aria-label="Colecciones">
+    <a class="cb-link" href="/colecciones/">
+      <span class="cb-strip" aria-hidden="true">__STRIPS__</span>
+      <span class="cb-shade" aria-hidden="true"></span>
+      <span class="cb-in">
+        <span class="cb-no label">Nueva temporada 2026 · __NCOL__ colecciones</span>
+        <span class="cb-h">Colecciones</span>
+        <span class="cb-sub">Árboles vestidos, listos para tu casa</span>
+        <span class="cb-stats"><span>Venta desde <b>__MINSALE__</b></span><span>Renta desde <b>__MINRENT__</b></span></span>
+        <span class="cb-note label">Todas incluyen bajo árbol y adornos abajo</span>
+        <span class="cb-btn">Ver todas las colecciones <i aria-hidden="true">→</i></span>
+      </span>
+    </a>
+  </section>
+
+  <section class="door-cat" aria-label="Catálogo">
+    <div class="gingham gingham-green" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="opener dk-open">
+        <h2>Catálogo <em>piezas sueltas para tu propio estilo</em></h2>
+        <p><b class="dk-num">__NPZ__</b> piezas en existencia: esferas, follaje, listones, cascanueces y más. Elige una categoría para empezar.</p>
+      </div>
+      <div class="dk-grid">__CATTILES__</div>
+      <div class="dk-cta"><a class="btn dk-btn" href="/catalogo/">Ver catálogo completo <span aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="gingham gingham-green" aria-hidden="true"></div>
+  </section>
+  <!--/DOORS-->
+  <!--COL-->
   <section id="colecciones">
     <div class="band band-red"><div class="wrap band-inner">
       <div class="opener">
@@ -910,6 +1128,7 @@ __MENU__
       </div>
     </div>
   </section>
+  <!--/COL-->
 
   <section class="block aromas" id="aromas">
     <div class="wrap">
@@ -922,7 +1141,7 @@ __MENU__
       </div>
       <div class="aro-grid">
         <article class="aro rv">
-          <figure class="frame aro-ph"><picture><source srcset="img/bruma-cuento-de-navidad.webp" type="image/webp"><img loading="lazy" src="img/bruma-cuento-de-navidad.png" alt="Aromatizante Cuento de Navidad de Bruma Scent, botella ámbar de 250 ml" width="560" height="1000"></picture></figure>
+          <figure class="frame aro-ph"><picture><source srcset="/img/bruma-cuento-de-navidad.webp" type="image/webp"><img loading="lazy" src="/img/bruma-cuento-de-navidad.png" alt="Aromatizante Cuento de Navidad de Bruma Scent, botella ámbar de 250 ml" width="560" height="1000"></picture></figure>
           <div class="aro-info">
             <p class="label aro-brand">Bruma Scent × Lucy Perea Decor</p>
             <h3>Cuento de <em>Navidad</em></h3>
@@ -934,7 +1153,7 @@ __MENU__
           </div>
         </article>
         <article class="aro rv">
-          <figure class="frame aro-ph"><picture><source srcset="img/bruma-christmas-tree.webp" type="image/webp"><img loading="lazy" src="img/bruma-christmas-tree.png" alt="Aromatizante Christmas Tree de Bruma Scent, botella ámbar en spray" width="560" height="1000"></picture></figure>
+          <figure class="frame aro-ph"><picture><source srcset="/img/bruma-christmas-tree.webp" type="image/webp"><img loading="lazy" src="/img/bruma-christmas-tree.png" alt="Aromatizante Christmas Tree de Bruma Scent, botella ámbar en spray" width="560" height="1000"></picture></figure>
           <div class="aro-info">
             <p class="label aro-brand">Bruma Scent × Lucy Perea Decor</p>
             <h3>Christmas <em>Tree</em></h3>
@@ -949,6 +1168,7 @@ __MENU__
     </div>
   </section>
 
+  <!--CAT-->
   <section class="catalog" id="catalogo">
     <div class="band band-green"><div class="wrap band-inner">
         <div class="opener">
@@ -965,6 +1185,7 @@ __MENU__
       <div class="grid" id="grid"></div>
     </div>
   </section>
+  <!--/CAT-->
 
   <section class="block" id="instalacion">
     <div class="wrap">
@@ -994,6 +1215,7 @@ __MENU__
     </div>
   </section>
 
+  <!--CONTACT-->
   <div class="gingham" aria-hidden="true"></div>
   <section class="block contact" id="contacto">
     <div class="wrap">
@@ -1009,6 +1231,7 @@ __MENU__
       <p class="meta">Instalamos en Querétaro, Ciudad de México y algunas zonas del Estado de México. Envíos a toda la República según volumen. Visita nuestro showroom (solo con cita) en Tlacote 116, Villas del Mesón, Juriquilla, Querétaro. Síguenos en Instagram para ver las nuevas colecciones.</p>
     </div>
   </section>
+  <!--/CONTACT-->
 </main>
 
 <footer class="foot-band">
@@ -1027,11 +1250,12 @@ const wa = t => WA + "?text=" + encodeURIComponent(t);
 document.querySelectorAll("[data-wa]").forEach(a => a.href = wa(a.dataset.wa));
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const CODES = {"Golden Forest":"GF","White Christmas":"WC","Classic Christmas":"CC","Candy Land":"CL","Candy Cane":"CN","Navy Blue":"NB","Forest Whisper":"FW","Ralph Lauren Style":"RL","Frostbite":"FB","Burgundy Cranberry":"BC","Crystal Tree":"CT"};
-const src = f => /^(img\/|https?:)/.test(f) ? f : IMG + f;
+const src = f => /^https?:/.test(f) ? f : /^\/?img\//.test(f) ? "/" + f.replace(/^\//, "") : IMG + f;
 const pad = n => String(n).padStart(2, "0");
 const code = (c, j) => CODES[c.name] + "-" + pad(j + 1);
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
+if (document.getElementById("cols")) {
 // Featured new-season collections
 document.getElementById("feat").innerHTML = DATA.collections.filter(c => c.new).map(c => `
   <a class="fcard" href="#${slug(c.name)}">
@@ -1095,6 +1319,9 @@ document.getElementById("cols").addEventListener("click", e => {
 document.getElementById("lbx").addEventListener("click", () => lb.close());
 lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
 
+}
+
+if (document.getElementById("icards")) {
 // Installation cards: tree drawn to the height range's top
 const topH = r => parseFloat(r[0].replace(",", ".").split("–").pop());
 const maxH = Math.max(...DATA.install.map(topH));
@@ -1108,6 +1335,9 @@ document.getElementById("icards").innerHTML = DATA.install.map(r => {
   </div>`;
 }).join("");
 
+}
+
+if (document.getElementById("tabs")) {
 // Catalog
 const cats = DATA.categories;
 let current = cats[0].id;
@@ -1160,14 +1390,16 @@ function openCat(){
 window.addEventListener("hashchange", openCat);
 openCat();
 
+}
+
 // Gentle reveal: content is visible at rest; it only settles into place when scrolled to
 document.documentElement.classList.add("js");
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {rootMargin: "0px 0px -8% 0px"}) : null;
 const watch = () => io && document.querySelectorAll(".rv:not(.in)").forEach(el => io.observe(el));
-watch(); new MutationObserver(watch).observe(document.getElementById("grid"), {childList: true});
+watch(); if (document.getElementById("grid")) new MutationObserver(watch).observe(document.getElementById("grid"), {childList: true});
 
 // Copy number
-document.getElementById("copy").addEventListener("click", async e => {
+document.getElementById("copy")?.addEventListener("click", async e => {
   const btn = e.currentTarget;
   try { await navigator.clipboard.writeText("5569695206"); btn.textContent = "Número copiado"; }
   catch { const r = document.createRange(); r.selectNodeContents(document.getElementById("num")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Número seleccionado"; }
