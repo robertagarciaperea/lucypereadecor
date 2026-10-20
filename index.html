@@ -872,8 +872,10 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .dc-btn{width:100%}
   .door-cat .wrap{padding-block:48px 52px}
   .dk-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .dk-grid .dk-t:last-child{grid-column:1 / -1}
-  .dk-grid .dk-t:last-child .dk-img{aspect-ratio:16/9}
+  .dk-grid .dk-t:last-child{grid-column:1 / -1;flex-direction:row;align-items:center}
+  .dk-grid .dk-t:last-child .dk-img{aspect-ratio:auto;width:42%;height:150px;flex:none;padding:12px}
+  .dk-grid .dk-t:last-child .dk-txt{flex:1;text-align:left}
+
   .dk-txt b{font-size:19px}
   .dk-btn{width:100%}
 }
@@ -1008,6 +1010,10 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
   .cb-stats{gap:6px 22px}
   .cb-btn{width:100%;justify-content:center;padding:17px 14px;font-size:11px;letter-spacing:.14em}
 }
+
+.dk-img{min-height:0;overflow:hidden;position:relative}
+.dk-img img{position:absolute;top:18px;bottom:18px;left:50%;transform:translateX(-50%);height:calc(100% - 36px);width:auto;max-width:calc(100% - 36px)}
+.dk-t:hover .dk-img img{transform:translateX(-50%) scale(1.1) rotate(-4deg)}
 </style>
 </head>
 <body>
@@ -1171,7 +1177,7 @@ body.menu-open{overflow:hidden}
         <h2>Catálogo <em>piezas sueltas para tu propio estilo</em></h2>
         <p><b class="dk-num">206</b> piezas en existencia: esferas, follaje, listones, cascanueces y más. Elige una categoría para empezar.</p>
       </div>
-      <div class="dk-grid"><a class="dk-t" href="/catalogo/#cat-arboles"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/0404176679b3e8e63eebcde6d6010afb.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Árboles</b><small>15 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-esferas"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/bb7711bd7f8ffa3065b6e8ae6d69a48f.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Esferas y ornamentos</b><small>70 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-follaje"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d14dbd9b476e70b4b90f8b7f7f493f1e.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Follaje y moños</b><small>38 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-listones"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/39b7fe1dde4659e9292843cf981882a6.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Listones</b><small>31 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-decoraciones"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d6b08cb1f5267ca8f0505f23d7672219.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Decoraciones</b><small>52 piezas</small></span></a></div>
+      <div class="dk-grid"><a class="dk-t" href="/catalogo/#cat-arboles"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/0404176679b3e8e63eebcde6d6010afb.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Árboles</b><small>15 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-esferas"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/bb7711bd7f8ffa3065b6e8ae6d69a48f.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Esferas y ornamentos</b><small>70 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-follaje"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d14dbd9b476e70b4b90f8b7f7f493f1e.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Follaje y moños</b><small>38 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-listones"><span class="dk-img"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/39b7fe1dde4659e9292843cf981882a6.png" alt="" loading="lazy"></span><span class="dk-txt"><b>Listones</b><small>31 piezas</small></span></a><a class="dk-t" href="/catalogo/#cat-decoraciones"><span class="dk-img"><img src="/img/cascanueces-rojo-terciopelo.webp?v=3" alt="" loading="lazy"></span><span class="dk-txt"><b>Decoraciones</b><small>52 piezas</small></span></a></div>
       <div class="dk-cta"><a class="btn dk-btn" href="/catalogo/">Ver catálogo completo <span aria-hidden="true">→</span></a></div>
     </div>
     <div class="gingham gingham-green" aria-hidden="true"></div>
