@@ -25,16 +25,17 @@ jobs:
           import os
           from rembg import remove, new_session
           from PIL import Image
-          s = new_session("isnet-general-use")
-          for f in sorted(os.listdir("raw")):
-              im = Image.open("raw/" + f).convert("RGB")
-              im.thumbnail((1400, 1400))
-              out = remove(im, session=s, alpha_matting=True, alpha_matting_foreground_threshold=240, alpha_matting_background_threshold=15, alpha_matting_erode_size=8)
-              out = out.crop(out.getchannel("A").point(lambda a: 255 if a > 20 else 0).getbbox())
-              out.save("img/col/" + f.rsplit(".", 1)[0][:8] + ".png", optimize=True)
-              im.save("img/col/" + f.rsplit(".", 1)[0][:8] + "-src.jpg", quality=85)
-              print(f, out.size)
+          for model in ("birefnet-general", "birefnet-massive"):
+              s = new_session(model)
+              os.makedirs("img/col/" + model, exist_ok=True)
+              for f in sorted(os.listdir("raw")):
+                  im = Image.open("raw/" + f).convert("RGB")
+                  im.thumbnail((1200, 1200))
+                  out = remove(im, session=s)
+                  out = out.crop(out.getchannel("A").point(lambda a: 255 if a > 20 else 0).getbbox())
+                  out.save(f"img/col/{model}/" + f[:8] + ".png", optimize=True)
+                  print(model, f, out.size, flush=True)
           PY
       - run: |
           git config user.name "Claude"; git config user.email "noreply@anthropic.com"
-          git add img/col && git commit -m "Recortes de colecciones (rembg)" && git push
+          git add img/col && git commit -m "Recortes birefnet" && git push
