@@ -923,6 +923,48 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 .dc-plate{padding:10px 12px 0!important;background:var(--white)!important;align-items:stretch!important}
 .dc-plate img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:999px 999px 0 0;border:1px solid var(--rule);border-bottom:0;transition:transform .45s,filter .45s}
 .dc-t:hover .dc-plate img{transform:translateY(-3px)}
+
+/* ===== Colecciones: mosaico de revista ===== */
+.door-col .col-head{margin-bottom:18px}
+.bx-stats{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 30px;padding:14px 0 18px;margin-bottom:26px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);font:600 11px/1.3 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bx-stats b{font:700 26px/1 var(--text);letter-spacing:0;color:var(--red);text-transform:none;margin:0 4px}
+.bx-note{margin-left:auto;color:var(--green)}
+.bx-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;aspect-ratio:16/9}
+.bx{position:relative;display:block;overflow:hidden;text-decoration:none;color:var(--cream);background:#1a140c}
+.bx-grid .bx:first-child{grid-column:1 / span 2;grid-row:1 / span 2}
+.bx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.bx:hover img{transform:scale(1.05)}
+.bx::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,6,0) 45%,rgba(18,12,6,.82) 100%)}
+.bx::before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,246,232,.45);z-index:2;pointer-events:none}
+.bx-t{position:absolute;z-index:3;left:18px;right:18px;bottom:16px;display:flex;flex-direction:column;gap:4px}
+.bx-t .nw{align-self:flex-start;background:var(--red);color:#fff;border-radius:999px;padding:4px 9px;font:700 9px/1 var(--label);letter-spacing:.14em;text-transform:uppercase}
+.bx-t b{font-family:var(--display);font-weight:500;font-size:clamp(20px,1.9vw,28px);line-height:1.05}
+.bx-grid .bx:first-child .bx-t b{font-size:clamp(34px,3.6vw,54px)}
+.bx-t small{font:600 10px/1.3 var(--label);letter-spacing:.12em;text-transform:uppercase;color:#F4D9A6}
+.bx-grid .bx:first-child .bx-t{left:28px;bottom:26px}
+.bx-grid .bx:first-child .bx-t small{font-size:11.5px}
+.bx-more{margin:40px 0 14px;color:var(--red)}
+.bx-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.bx-row .bx{aspect-ratio:3/4}
+.bx-row .bx-t{left:12px;right:12px;bottom:12px}
+.bx-row .bx-t b{font-size:18px}
+.bx-row .bx-t small{font-size:9px}
+.bx-cta{text-align:center;margin-top:36px}
+.bx-cta .btn{min-height:54px;padding:0 34px}
+@media (max-width:980px){.bx-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  .bx-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;aspect-ratio:auto}
+  .bx{aspect-ratio:3/4}
+  .bx-grid .bx:first-child{grid-column:1 / -1;grid-row:auto;aspect-ratio:4/5}
+  .bx-note{margin-left:0}
+}
+@media (max-width:640px){
+  .bx-stats{gap:6px 18px}.bx-stats b{font-size:22px}
+  .bx-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bx-row .bx:last-child:nth-child(odd){grid-column:1 / -1;aspect-ratio:16/10}
+  .bx-cta .btn{width:100%}
+  .bx-t b{font-size:20px}
+}
 </style>
 </head>
 <body>
@@ -1071,20 +1113,11 @@ body.menu-open{overflow:hidden}
         <h3 class="dc-title">Colecciones</h3>
         <p class="sub">Árboles vestidos, listos para tu casa</p>
       </header>
-      <div class="dc-body">
-        <a class="dc-stage rv" href="/colecciones/#crystal-tree"><span class="dc-arch"><img src="/img/crystal-tree.jpg" alt="Árbol de la colección Crystal Tree" loading="lazy"></span><span class="sticker" aria-hidden="true">Nuevo<b>2026</b></span><span class="dc-cap"><b>Crystal Tree</b> · nueva en 2026</span></a>
-        <div class="dc-info">
-          <div class="prices">
-            <div class="tag"><b>11</b><span class="label">Colecciones</span><i class="inc">Listas para tu casa</i></div>
-            <div class="tag"><b>$46,000</b><span class="label">Venta desde</span><i class="inc">Con montaje</i></div>
-            <div class="tag"><b>$25,000</b><span class="label">Renta desde</span><i class="inc">Montaje y desmontaje</i></div>
-          </div>
-          <p class="incl-all">Todas incluyen bajo árbol y adornos abajo.</p>
-          <p class="pieces-h"><span class="label">Elige tu colección</span><span class="pc-count">toca para verla</span></p>
-          <div class="dc-grid"><a class="dc-t" href="/colecciones/#crystal-tree"><span class="dc-plate ph"><img src="/img/crystal-tree.jpg" alt="" loading="lazy"></span><i class="nw">2026</i><span>Crystal Tree</span></a><a class="dc-t" href="/colecciones/#forest-whisper"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/5b4b0441be2cccdb835d11259a379c26.jpg" alt="" loading="lazy"></span><i class="nw">2026</i><span>Forest Whisper</span></a><a class="dc-t" href="/colecciones/#burgundy-cranberry"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/08c15db36af9b38c6b895abc22e3c094.jpg" alt="" loading="lazy"></span><i class="nw">2026</i><span>Burgundy Cranberry</span></a><a class="dc-t" href="/colecciones/#ralph-lauren-style"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ccfa56f8545d1dc06d09ad23a5e4d77f.jpg" alt="" loading="lazy"></span><i class="nw">2026</i><span>Ralph Lauren Style</span></a><a class="dc-t" href="/colecciones/#frostbite"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ab12581c10ff9217390c2db64b5849b2.jpg" alt="" loading="lazy"></span><i class="nw">2026</i><span>Frostbite</span></a><a class="dc-t" href="/colecciones/#golden-forest"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/3a75dc378b048fc74fa11a61054d62e1.jpg" alt="" loading="lazy"></span><span>Golden Forest</span></a><a class="dc-t" href="/colecciones/#white-christmas"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/096b76ee1a5ba315f92b5279ca1051d9.jpg" alt="" loading="lazy"></span><span>White Christmas</span></a><a class="dc-t" href="/colecciones/#classic-christmas"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/8504ef11e56d6efee37b707251d69afa.jpg" alt="" loading="lazy"></span><span>Classic Christmas</span></a><a class="dc-t" href="/colecciones/#candy-land"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/cede4e6441b5855818933b23a0cfaa1f.jpg" alt="" loading="lazy"></span><span>Candy Land</span></a><a class="dc-t" href="/colecciones/#candy-cane"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/fd989278678cadb0092d288f9b98d81a.jpg" alt="" loading="lazy"></span><span>Candy Cane</span></a><a class="dc-t" href="/colecciones/#navy-blue"><span class="dc-plate ph"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/4888cd5fd5f5b80f069b78a5b1477129.jpg" alt="" loading="lazy"></span><span>Navy Blue</span></a></div>
-          <a class="btn btn-red dc-btn" href="/colecciones/">Ver todas las colecciones <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
+      <div class="bx-stats"><span><b>11</b> colecciones</span><span>Venta desde <b>$46,000</b></span><span>Renta desde <b>$25,000</b></span><span class="bx-note">Todas incluyen bajo árbol y adornos abajo</span></div>
+      <div class="bx-grid"><a class="bx" href="/colecciones/#crystal-tree"><img src="/img/crystal-tree.jpg" alt="Colección Crystal Tree" loading="lazy"><span class="bx-t"><span class="nw">Nuevo 2026</span><b>Crystal Tree</b><small>Venta $46,000 · Renta $25,000</small></span></a><a class="bx" href="/colecciones/#forest-whisper"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/5b4b0441be2cccdb835d11259a379c26.jpg" alt="Colección Forest Whisper" loading="lazy"><span class="bx-t"><span class="nw">Nuevo 2026</span><b>Forest Whisper</b><small>Venta $52,000 · Renta $26,000</small></span></a><a class="bx" href="/colecciones/#burgundy-cranberry"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/08c15db36af9b38c6b895abc22e3c094.jpg" alt="Colección Burgundy Cranberry" loading="lazy"><span class="bx-t"><span class="nw">Nuevo 2026</span><b>Burgundy Cranberry</b><small>Venta $65,000 · Renta $26,000</small></span></a><a class="bx" href="/colecciones/#ralph-lauren-style"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ccfa56f8545d1dc06d09ad23a5e4d77f.jpg" alt="Colección Ralph Lauren Style" loading="lazy"><span class="bx-t"><span class="nw">Nuevo 2026</span><b>Ralph Lauren Style</b><small>Venta $85,000 · Renta $32,000</small></span></a><a class="bx" href="/colecciones/#frostbite"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ab12581c10ff9217390c2db64b5849b2.jpg" alt="Colección Frostbite" loading="lazy"><span class="bx-t"><span class="nw">Nuevo 2026</span><b>Frostbite</b><small>Venta $65,000 · Renta $30,000</small></span></a></div>
+      <p class="label bx-more">Más colecciones</p>
+      <div class="bx-row"><a class="bx" href="/colecciones/#golden-forest"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/3a75dc378b048fc74fa11a61054d62e1.jpg" alt="Colección Golden Forest" loading="lazy"><span class="bx-t"><b>Golden Forest</b><small>Venta $70,000 · Renta $30,000</small></span></a><a class="bx" href="/colecciones/#white-christmas"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/096b76ee1a5ba315f92b5279ca1051d9.jpg" alt="Colección White Christmas" loading="lazy"><span class="bx-t"><b>White Christmas</b><small>Venta $70,000 · Renta $35,000</small></span></a><a class="bx" href="/colecciones/#classic-christmas"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/8504ef11e56d6efee37b707251d69afa.jpg" alt="Colección Classic Christmas" loading="lazy"><span class="bx-t"><b>Classic Christmas</b><small>Venta $52,000 · Renta $26,000</small></span></a><a class="bx" href="/colecciones/#candy-land"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/cede4e6441b5855818933b23a0cfaa1f.jpg" alt="Colección Candy Land" loading="lazy"><span class="bx-t"><b>Candy Land</b><small>Venta $69,000 · Renta $32,000</small></span></a><a class="bx" href="/colecciones/#candy-cane"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/fd989278678cadb0092d288f9b98d81a.jpg" alt="Colección Candy Cane" loading="lazy"><span class="bx-t"><b>Candy Cane</b><small>Venta $76,000 · Renta $32,000</small></span></a><a class="bx" href="/colecciones/#navy-blue"><img src="https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/4888cd5fd5f5b80f069b78a5b1477129.jpg" alt="Colección Navy Blue" loading="lazy"><span class="bx-t"><b>Navy Blue</b><small>Venta $56,000 · Renta $27,000</small></span></a></div>
+      <div class="bx-cta"><a class="btn btn-red" href="/colecciones/">Ver todas las colecciones <span aria-hidden="true">→</span></a></div>
     </div>
   </section>
 

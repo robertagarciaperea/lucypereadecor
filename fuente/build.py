@@ -60,12 +60,20 @@ def _thumb(c):
     cu = _cut(c["img"])
     return f'<span class="dc-plate"><img class="cut" src="{cu}" alt="" loading="lazy"></span>' if cu else f'<span class="dc-plate ph"><img src="{_src(c["img"])}" alt="" loading="lazy"></span>'
 COLTHUMBS = "".join(f'<a class="dc-t" href="/colecciones/#{_slug(c["name"])}">{_thumb(c)}{"<i class=\"nw\">2026</i>" if c["new"] else ""}<span>{c["name"]}</span></a>' for c in data["collections"])
+def _bx(c):
+    price = f'Venta ${c["sale"]:,}' + (f' · Renta ${c["rent"]:,}' if c["rent"] else "")
+    nw = '<span class="nw">Nuevo 2026</span>' if c["new"] else ""
+    return f'<a class="bx" href="/colecciones/#{_slug(c["name"])}"><img src="{_src(c["img"])}" alt="Colección {c["name"]}" loading="lazy"><span class="bx-t">{nw}<b>{c["name"]}</b><small>{price}</small></span></a>'
+_new = [c for c in data["collections"] if c["new"]][:5]
+_rest = [c for c in data["collections"] if c not in _new]
+BENTO = "".join(_bx(c) for c in _new)
+MORE = "".join(_bx(c) for c in _rest)
 CATIMG = {"arboles": "04041766", "esferas": "bb7711bd", "follaje": "96412652", "listones": "39b7fe1d", "decoraciones": "d6b08cb1"}
 CATTILES = "".join(f'<a class="dk-t" href="/catalogo/#cat-{c["id"]}"><span class="dk-img"><img src="{BASE + img(CATIMG[c["id"]])}" alt="" loading="lazy"></span><span class="dk-txt"><b>{c["name"]}</b><small>{len(c["items"])} piezas</small></span></a>' for c in data["categories"])
 MINSALE = "$" + f'{min(c["sale"] for c in data["collections"]):,}'
 MINRENT = "$" + f'{min(c["rent"] for c in data["collections"] if c["rent"]):,}'
 html = (html.replace("__NCOL__", str(len(data["collections"]))).replace("__NPZ__", str(NPZ))
-            .replace("__COLTHUMBS__", COLTHUMBS).replace("__CATTILES__", CATTILES)
+            .replace("__COLTHUMBS__", COLTHUMBS).replace("__BENTO__", BENTO).replace("__MORE__", MORE).replace("__CATTILES__", CATTILES)
             .replace("__MINSALE__", MINSALE).replace("__MINRENT__", MINRENT))
 html = (html.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
             .replace("__WAICON__", WAICON).replace("__WABASE__", WA).replace("__WA__", WA)
