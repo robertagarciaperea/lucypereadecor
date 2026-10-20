@@ -52,7 +52,14 @@ NPZ = sum(len(c["items"]) for c in data["categories"])
 NWTAG = '<i class="nw">2026</i>'
 def _slug(n): return re.sub(r"[^a-z0-9]+", "-", n.lower())
 def _src(f): return "/" + f if f.startswith("img/") else BASE + f
-COLTHUMBS = "".join(f'<a class="dc-t" href="/colecciones/#{_slug(c["name"])}"><img src="{_src(c["img"])}" alt="" loading="lazy">{"<i class=\"nw\">2026</i>" if c["new"] else ""}<span>{c["name"]}</span></a>' for c in data["collections"])
+_ROOT = here.parent
+def _cut(f):
+    k = "crystal-tree" if "crystal-tree" in f else f[:8]
+    return f"/img/col/{k}.webp" if (_ROOT / "img" / "col" / f"{k}.webp").exists() else None
+def _thumb(c):
+    cu = _cut(c["img"])
+    return f'<span class="dc-plate"><img class="cut" src="{cu}" alt="" loading="lazy"></span>' if cu else f'<span class="dc-plate ph"><img src="{_src(c["img"])}" alt="" loading="lazy"></span>'
+COLTHUMBS = "".join(f'<a class="dc-t" href="/colecciones/#{_slug(c["name"])}">{_thumb(c)}{"<i class=\"nw\">2026</i>" if c["new"] else ""}<span>{c["name"]}</span></a>' for c in data["collections"])
 CATIMG = {"arboles": "04041766", "esferas": "bb7711bd", "follaje": "96412652", "listones": "39b7fe1d", "decoraciones": "d6b08cb1"}
 CATTILES = "".join(f'<a class="dk-t" href="/catalogo/#cat-{c["id"]}"><span class="dk-img"><img src="{BASE + img(CATIMG[c["id"]])}" alt="" loading="lazy"></span><span class="dk-txt"><b>{c["name"]}</b><small>{len(c["items"])} piezas</small></span></a>' for c in data["categories"])
 MINSALE = "$" + f'{min(c["sale"] for c in data["collections"]):,}'
