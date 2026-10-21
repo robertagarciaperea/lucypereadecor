@@ -1,0 +1,13 @@
+name: voz
+on: {push: {branches: [voz]}}
+permissions: {contents: write}
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -sfL -o voz.mp3 "$(cat voz-url.txt)"
+          ls -la voz.mp3
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add voz.mp3 && git commit -m "voz lista" && git push
