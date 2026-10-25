@@ -243,6 +243,7 @@ DECORACIONES = [
     ("Galletas de jengibre sentadas", [("38–40 cm alto (por pieza)", 580)], "0b3767fb", ""),
     ("Árboles de jengibre", [("40 y 30 cm (set de 2)", 1520)], "f1050164", ""),
     ("Ratones verdes estirables", [("61 cm alto (por pieza)", 700)], "df7c95c9", ""),
+    ("Ratones navideños sentados · 2 modelos", [("Por pieza", None)], "img/ratones-merry-mouse.webp", "agotado"),
     ("Ratones verdes sentados colgantes", [("45 cm alto (por pieza)", 350)], "bf893bbf", ""),
     ("Figuras de madera con luces", [("59 cm alto (por pieza)", 999)], "9c3e17f8", ""),
     ("Letrero Noel", [("50.6 × 24.1 cm", 615)], "82bc24cd", ""),

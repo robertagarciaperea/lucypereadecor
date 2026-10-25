@@ -1363,12 +1363,12 @@ const grid = document.getElementById("grid"), q = document.getElementById("q"), 
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 let shown = [];
 function card(p, i){
-  const rows = p.s.map(([size, price]) => `<li><i>${esc(size)}</i><b>${fmt(price)}</b></li>`).join("");
+  const rows = p.s.map(([size, price]) => `<li><i>${esc(size)}</i>${price == null ? "" : `<b>${fmt(price)}</b>`}</li>`).join("");
   const name = esc(p.n).replace(/(\S+)$/, '<span class="hi">$1</span>');
   return `<article class="card rv${p.so ? " sold" : ""}" data-i="${i}">
     <div class="img" role="button" tabindex="0" aria-label="Ver ${esc(p.n)} en grande">${p.so ? '<span class="soldout">Sold out</span>' : ""}${p.g ? `<span class="grp" role="img" aria-label="${esc(p.n)}" style="aspect-ratio:${p.ar}">${p.g.map(([f,l,tp,w]) => `<img loading="lazy" src="${IMG + f}" alt="" style="left:${l}%;top:${tp}%;width:${w}%">`).join("")}</span>` : `<img loading="lazy" src="${src(p.i)}" alt="${esc(p.n)}" onerror="this.style.visibility='hidden'">`}</div>
     <h3>${name}</h3><ul>${rows}</ul>
-    <a class="ask" target="_blank" rel="noopener" href="${wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + " " + fmt(x[1])).join(", ") + ").")}">Pedir</a>
+    <a class="ask" target="_blank" rel="noopener" href="${wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + (x[1] == null ? "" : " " + fmt(x[1]))).join(", ") + ").")}">Pedir</a>
   </article>`;
 }
 function titleTile(label, n){
@@ -1401,8 +1401,8 @@ function openCard(el){
   const img = document.getElementById("clbimg");
   img.src = p.g ? IMG + p.g[0][0] : src(p.i); img.alt = p.n;
   document.getElementById("clbcap").textContent = p.n;
-  document.getElementById("clbsub").textContent = p.s.map(x => x[0] + " · " + fmt(x[1])).join("   ");
-  document.getElementById("clbask").href = wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + " " + fmt(x[1])).join(", ") + ").");
+  document.getElementById("clbsub").textContent = p.s.map(x => x[0] + (x[1] == null ? "" : " · " + fmt(x[1]))).join("   ");
+  document.getElementById("clbask").href = wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + (x[1] == null ? "" : " " + fmt(x[1]))).join(", ") + ").");
   clb.showModal();
 }
 grid.addEventListener("click", e => { const im = e.target.closest(".img"); if (im) openCard(im); });
