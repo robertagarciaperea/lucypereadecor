@@ -83,7 +83,7 @@ ESFERAS = [
     ("Estrella 3D con glitter champagne", [("40 cm alto", 500)], "f3b3031c", ""),
     ("Estrella 3D con glitter plateada", [("40 cm alto", 500)], "96f9c706", ""),
     ("Estrella 3D con glitter roja", [("40 cm alto", 500)], "7641d511", ""),
-("Esfera joya plata", [("15 cm", 300)], "45995b37", ""),
+    ("Esfera joya plata", [("15 cm", 300)], "45995b37", ""),
     ("Esfera joya plata · 4 modelos", [("12 cm (por pieza)", 99)], "img/joya/plata.webp", ""),
     ("Esfera joya dorada", [("15 cm", 300)], "48351afc", ""),
     ("Esfera joya dorada · 4 modelos", [("12 cm (por pieza)", 99)], "img/joya/dorada.webp", ""),
