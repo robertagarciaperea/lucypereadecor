@@ -18,7 +18,7 @@ def items(lst):
         if isinstance(i, dict):
             out.append({"n": n, "s": [[a, b] for a, b in s], "g": [[img(h), l, t, w] for h, l, t, w in i["g"]], "ar": i["ar"]})
         else:
-            out.append({"n": n, "s": [[a, b] for a, b in s], "i": img(i)})
+            out.append({"n": n, "s": [[a, b] for a, b in s], "i": img(i), **({"so": 1} if _ == "agotado" else {})})
     return out
 
 TREES = {n: {"n": n, "s": s[0][0], "i": img(i)} for n, s, i, _ in ARBOLES}

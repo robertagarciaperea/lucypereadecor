@@ -181,7 +181,7 @@ LISTONES = [
     ("Listón candy cane", [("10 cm × 9.1 m", 1260), ("6.3 cm × 9.1 m", 500)], "dcfedb05", ""),
     ("Listón decorado", [("10 cm × 4.5 m", 1025)], "95eb5ae2", ""),
     ("Listón azul Merry Christmas", [("10 cm × 4.5 m", 990)], "2f95e29c", ""),
-    ("Listón blanco Merry Christmas", [("10 cm × 4.5 m", 1400)], "600d238c", ""),
+    ("Listón blanco Merry Christmas", [("10 cm × 4.5 m", 1400)], "600d238c", "agotado"),
     ("Listón blanco velvet", [("10 cm × 4.5 m", 650)], "e544c60f", ""),
     ("Listón blanco plush velvet", [("10 cm × 9.1 m", 1250)], "751b8c9a", ""),
     ("Listón rosa velvet", [("10 cm × 9.1 m", 990)], "f9d787f8", ""),
