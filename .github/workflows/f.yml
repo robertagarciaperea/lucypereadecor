@@ -1,0 +1,14 @@
+name: f
+on: {push: {branches: [fetchimg]}}
+permissions: {contents: write}
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/c19d456cc2dd70bb7176e8468a7ab982.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/c19d456cc2dd70bb7176e8468a7ab982.png"
+          curl -sfL -o tmpimg/aaf0df0167f6e5b44d0466ecb6b1798c.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/aaf0df0167f6e5b44d0466ecb6b1798c.png"
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add tmpimg && git commit -m "img lista" && git push
