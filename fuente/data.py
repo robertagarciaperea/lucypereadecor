@@ -197,7 +197,7 @@ LISTONES = [
 ]
 
 DECORACIONES = [
-    ("Cascanueces rojo, negro y dorado de metal", [("2.00 m alto · 9 kg", 17300)], "8d9e2abc", ""),
+    ("Cascanueces rojo, negro y dorado de metal", [("2.00 m alto · 9 kg", 17300)], "8d9e2abc", "agotado"),
     ("Cascanueces blanco de resina", [("141 cm alto", 14000)], "ab509c60", ""),
     ("Cascanueces dorado de resina", [("141 cm alto", 14000)], "d6b08cb1", ""),
     ("Cascanueces rojo y verde con dorado de poliresina", [("91.44 cm alto", 7000)], "821095af", ""),
