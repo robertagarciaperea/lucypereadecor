@@ -1014,6 +1014,10 @@ h1,h2,h3,.tab,.fname,.tag b,.brand .word{font-weight:500}
 .dk-img{min-height:0;overflow:hidden;position:relative}
 .dk-img img{position:absolute;top:18px;bottom:18px;left:50%;transform:translateX(-50%);height:calc(100% - 36px);width:auto;max-width:calc(100% - 36px)}
 .dk-t:hover .dk-img img{transform:translateX(-50%) scale(1.1) rotate(-4deg)}
+
+/* precios: cifras claras */
+.card li b,.fprice b,.tag b,.aro-price,.ip,.irow .ip,.icard .ip,td.p,.garland b,.contact .num{font-family:var(--text)!important;font-weight:700!important;font-variant-numeric:lining-nums tabular-nums;letter-spacing:0}
+.catalog .card .img{cursor:zoom-in}
 </style>
 </head>
 <body>
@@ -1189,6 +1193,7 @@ __MENU__
     <div class="wrap" style="padding-block:36px 96px">
       <p class="count" id="count" aria-live="polite"></p>
       <div class="grid" id="grid"></div>
+      <dialog class="lb" id="clb"><div class="box"><button type="button" class="x" id="clbx" aria-label="Cerrar">×</button><img id="clbimg" alt=""><p class="cap" id="clbcap"></p><p class="label" id="clbsub" style="margin:0;color:var(--muted)"></p><a class="btn btn-red" id="clbask" target="_blank" rel="noopener">Pedir por WhatsApp</a></div></dialog>
     </div>
   </section>
   <!--/CAT-->
@@ -1351,11 +1356,12 @@ const tabs = document.getElementById("tabs");
 tabs.innerHTML = cats.map(c => `<button class="tab" role="tab" aria-selected="${c.id === current}" data-id="${c.id}">${c.name}<span class="n">${c.items.length}</span></button>`).join("");
 const grid = document.getElementById("grid"), q = document.getElementById("q"), count = document.getElementById("count");
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+let shown = [];
 function card(p, i){
   const rows = p.s.map(([size, price]) => `<li><i>${esc(size)}</i><b>${fmt(price)}</b></li>`).join("");
   const name = esc(p.n).replace(/(\S+)$/, '<span class="hi">$1</span>');
-  return `<article class="card rv">
-    <div class="img">${p.g ? `<span class="grp" role="img" aria-label="${esc(p.n)}" style="aspect-ratio:${p.ar}">${p.g.map(([f,l,tp,w]) => `<img loading="lazy" src="${IMG + f}" alt="" style="left:${l}%;top:${tp}%;width:${w}%">`).join("")}</span>` : `<img loading="lazy" src="${src(p.i)}" alt="${esc(p.n)}" onerror="this.style.visibility='hidden'">`}</div>
+  return `<article class="card rv" data-i="${i}">
+    <div class="img" role="button" tabindex="0" aria-label="Ver ${esc(p.n)} en grande">${p.g ? `<span class="grp" role="img" aria-label="${esc(p.n)}" style="aspect-ratio:${p.ar}">${p.g.map(([f,l,tp,w]) => `<img loading="lazy" src="${IMG + f}" alt="" style="left:${l}%;top:${tp}%;width:${w}%">`).join("")}</span>` : `<img loading="lazy" src="${src(p.i)}" alt="${esc(p.n)}" onerror="this.style.visibility='hidden'">`}</div>
     <h3>${name}</h3><ul>${rows}</ul>
     <a class="ask" target="_blank" rel="noopener" href="${wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + " " + fmt(x[1])).join(", ") + ").")}">Pedir</a>
   </article>`;
@@ -1374,6 +1380,7 @@ function render(){
     items = c.items; label = `${c.name}: ${items.length} productos`;
   }
   count.textContent = label;
+  shown = items;
   grid.innerHTML = items.length ? items.map(card).join("") : `<p class="empty">No encontramos productos con esa búsqueda. Prueba con otra palabra o escríbenos por WhatsApp.</p>`;
 }
 tabs.addEventListener("click", e => {
@@ -1383,6 +1390,20 @@ tabs.addEventListener("click", e => {
   render();
 });
 q.addEventListener("input", render);
+const clb = document.getElementById("clb");
+function openCard(el){
+  const p = shown[+el.closest(".card").dataset.i]; if (!p) return;
+  const img = document.getElementById("clbimg");
+  img.src = p.g ? IMG + p.g[0][0] : src(p.i); img.alt = p.n;
+  document.getElementById("clbcap").textContent = p.n;
+  document.getElementById("clbsub").textContent = p.s.map(x => x[0] + " · " + fmt(x[1])).join("   ");
+  document.getElementById("clbask").href = wa("Hola, me interesa: " + p.n + " (" + p.s.map(x => x[0] + " " + fmt(x[1])).join(", ") + ").");
+  clb.showModal();
+}
+grid.addEventListener("click", e => { const im = e.target.closest(".img"); if (im) openCard(im); });
+grid.addEventListener("keydown", e => { const im = e.target.closest(".img"); if (im && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openCard(im); } });
+document.getElementById("clbx").addEventListener("click", () => clb.close());
+clb.addEventListener("click", e => { if (e.target === clb) clb.close(); });
 render();
 // Abrir una categoría desde el menú: #cat-<id>
 function openCat(){

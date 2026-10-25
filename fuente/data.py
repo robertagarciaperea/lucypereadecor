@@ -110,9 +110,6 @@ ESFERAS = [
     ("Guirnalda de esferas roja de terciopelo", [("1.22 m de largo", 2300)], "8c24075a", ""),
     ("Guirnalda de esferas burgundy de terciopelo", [("1.22 m de largo", 2300)], "3d2cf091", ""),
     ("Candelabro de cristal para pino", [("22.8 cm de largo", 380)], "1872da27", ""),
-    ("Moño burgundy de terciopelo con clip", [("30 × 28 cm", 190)], "9b2f0ea8", ""),
-    ("Moño rojo de terciopelo con clip", [("30 × 28 cm", 190)], "96412652", ""),
-    ("Moño verde de terciopelo con clip", [("30 × 28 cm", 190)], "2dc76d08", ""),
     ("Paleta brillosa rojo con blanco", [("60 cm diám", 900)], "7a609603", ""),
     ("Dulces candy rosa, azul y verde", [("33 cm largo (por pieza)", 680)], {'g': [('a89c94e8', 26.75, 4.52, 73.25), ('62e6862b', 0.0, 15.48, 61.69), ('e57dac91', 18.8, 42.38, 58.31), ('a89c94e8', 15.66, 0.0, 81.2)], 'ar': 0.9881}, ""),
     ("Candy cane brillosos tono pastel", [("28 cm alto", 420)], {'g': [('7803d833', 19.26, 0.0, 80.74), ('52796620', 0.0, 32.59, 86.48)], 'ar': 0.7796}, ""),
@@ -122,6 +119,9 @@ ESFERAS = [
 ]
 
 FOLLAJE = [
+    ("Moño burgundy de terciopelo con clip", [("30 × 28 cm", 190)], "9b2f0ea8", ""),
+    ("Moño rojo de terciopelo con clip", [("30 × 28 cm", 190)], "96412652", ""),
+    ("Moño verde de terciopelo con clip", [("30 × 28 cm", 190)], "2dc76d08", ""),
     ("Guirnalda nevada con luces", [("270 cm de largo", 1200)], "d3a51ef4", ""),
     ("Guirnalda de pino", [("167 cm de largo", 1400)], "50eadc8a", ""),
     ("Guirnalda verde de pino Norfolk", [("1.60 m de largo", 740)], "fd0125dd", ""),
