@@ -71,6 +71,8 @@ STRIPS = "".join(f'<img src="{_src(c["img"])}" alt="" loading="lazy">' for c in 
 BENTO = "".join(_bx(c) for c in _new)
 MORE = "".join(_bx(c) for c in _rest)
 CATIMG = {"arboles": "04041766", "esferas": "bb7711bd", "follaje": "d14dbd9b", "listones": "39b7fe1d", "decoraciones": "/img/cascanueces-rojo-terciopelo.webp?v=3"}
+for _c in data["categories"]:
+    _c["pic"] = CATIMG[_c["id"]] if CATIMG[_c["id"]].startswith("/") else BASE + img(CATIMG[_c["id"]])
 CATTILES = "".join(f'<a class="dk-t" href="/catalogo/#cat-{c["id"]}"><span class="dk-img"><img src="{CATIMG[c["id"]] if CATIMG[c["id"]].startswith("/") else BASE + img(CATIMG[c["id"]])}" alt="" loading="lazy"></span><span class="dk-txt"><b>{c["name"]}</b><small>{len(c["items"])} piezas</small></span></a>' for c in data["categories"])
 MINSALE = "$" + f'{min(c["sale"] for c in data["collections"]):,}'
 MINRENT = "$" + f'{min(c["rent"] for c in data["collections"] if c["rent"]):,}'
