@@ -1,0 +1,16 @@
+name: voz4
+on: {push: {branches: [voz4]}}
+permissions: {contents: write}
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: |
+          pip install -q edge-tts
+          mkdir -p vozmx
+          edge-tts --voice es-MX-DaliaNeural --rate=-4% -f guion.txt --write-media vozmx/dalia.mp3
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add vozmx && git commit -m "voz mx lista" && git push
