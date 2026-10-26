@@ -570,6 +570,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   .catalog .tabs .tab:hover{transform:none}
 }
 .tab .tpic{display:none}
+.catalog .tabs .mbr{display:none}
+@media (max-width:820px){.catalog .tabs .mbr{display:inline}}
 .catalog .tabs .tab .tpic{display:flex}
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 @media (prefers-reduced-motion:reduce){.swipe-hint > span::after{animation:none}}
@@ -1382,7 +1384,7 @@ if (document.getElementById("tabs")) {
 const cats = DATA.categories;
 let current = cats[0].id;
 const tabs = document.getElementById("tabs");
-tabs.innerHTML = cats.map(c => `<button class="tab" role="tab" aria-selected="${c.id === current}" data-id="${c.id}"><span class="tpic" aria-hidden="true"><img src="${c.pic}" alt="" loading="lazy"></span><span class="ctname">${c.name}</span><span class="n">${c.items.length}</span></button>`).join("");
+tabs.innerHTML = cats.map(c => `<button class="tab" role="tab" aria-selected="${c.id === current}" data-id="${c.id}"><span class="tpic" aria-hidden="true"><img src="${c.pic}" alt="" loading="lazy"></span><span class="ctname">${c.name.replace(" y ", " y<br class=\"mbr\">")}</span><span class="n">${c.items.length}</span></button>`).join("");
 const grid = document.getElementById("grid"), q = document.getElementById("q"), count = document.getElementById("count");
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 let shown = [];
