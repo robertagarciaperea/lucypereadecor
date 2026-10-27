@@ -1,0 +1,14 @@
+name: busca3
+on: {push: {branches: [busca3]}}
+permissions: {contents: write}
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/page.html "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/" || true
+          curl -sfL -o tmpimg/dbe35fea.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/$(grep -m1 '^dbe35fea' fuente/images.txt)" || true
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add tmpimg && git commit -m "img lista" && git push
