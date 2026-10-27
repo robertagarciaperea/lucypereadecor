@@ -1,0 +1,18 @@
+name: busca2
+on: {push: {branches: [busca2]}}
+permissions: {contents: write}
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/921fe10f13aa14f1153d28c00bbe6a52.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/921fe10f13aa14f1153d28c00bbe6a52.png" || true
+          curl -sfL -o tmpimg/28f56fffa47e125df6cd51b425b1db80.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/28f56fffa47e125df6cd51b425b1db80.png" || true
+          curl -sfL -o tmpimg/09122f60ba66ebd4b321cda2e26d899d.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/09122f60ba66ebd4b321cda2e26d899d.png" || true
+          curl -sfL -o tmpimg/b7475d9db9242cc779db0aa3fde13d7c.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/b7475d9db9242cc779db0aa3fde13d7c.png" || true
+          curl -sfL -o tmpimg/4f6011ff6961120692ea6c8a4f04e1cd.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/4f6011ff6961120692ea6c8a4f04e1cd.png" || true
+          curl -sfL -o tmpimg/501bdb93d376c5dd71ce3dc7059750b3.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/501bdb93d376c5dd71ce3dc7059750b3.png" || true
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add tmpimg && git commit -m "img lista" && git push
