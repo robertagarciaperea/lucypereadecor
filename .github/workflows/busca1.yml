@@ -1,0 +1,42 @@
+name: busca1
+on: {push: {branches: [busca1]}}
+permissions: {contents: write}
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/7480fe6a25b0361bdb6a334af97de9c5.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/7480fe6a25b0361bdb6a334af97de9c5.png" || true
+          curl -sfL -o tmpimg/12492041e98a1e485eca82bc96b9b922.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/12492041e98a1e485eca82bc96b9b922.png" || true
+          curl -sfL -o tmpimg/dfdc511f26b6dcb0ed4ac1439856bfa9.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/dfdc511f26b6dcb0ed4ac1439856bfa9.png" || true
+          curl -sfL -o tmpimg/f1d6852f8f36d8c4af0e2a384b1179b6.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/f1d6852f8f36d8c4af0e2a384b1179b6.png" || true
+          curl -sfL -o tmpimg/5ae7adacde566f763879607de7f5144e.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/5ae7adacde566f763879607de7f5144e.png" || true
+          curl -sfL -o tmpimg/c1caefa615a62aa8b2c412c13b3f7b94.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/c1caefa615a62aa8b2c412c13b3f7b94.png" || true
+          curl -sfL -o tmpimg/500ab0c47a5dd104821c8ce2bfcf32af.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/500ab0c47a5dd104821c8ce2bfcf32af.png" || true
+          curl -sfL -o tmpimg/77227fccc06bb657780212d68ac30a02.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/77227fccc06bb657780212d68ac30a02.png" || true
+          curl -sfL -o tmpimg/b5b32cf7deba63f0b9c4c597657fd664.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/b5b32cf7deba63f0b9c4c597657fd664.png" || true
+          curl -sfL -o tmpimg/6b8d6dd82fd78472f67210d8336f7fa0.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/6b8d6dd82fd78472f67210d8336f7fa0.png" || true
+          curl -sfL -o tmpimg/85a5c6a22bbd8bd3da614cb57ad690ff.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/85a5c6a22bbd8bd3da614cb57ad690ff.png" || true
+          curl -sfL -o tmpimg/4d638cdd2d3f9c712469df8957ecc92c.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/4d638cdd2d3f9c712469df8957ecc92c.png" || true
+          curl -sfL -o tmpimg/ace5a88256a5e6a3ce36bcc03f092735.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/ace5a88256a5e6a3ce36bcc03f092735.png" || true
+          curl -sfL -o tmpimg/abeb8157ac5f2f372ae5e258d5ca61f1.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/abeb8157ac5f2f372ae5e258d5ca61f1.png" || true
+          curl -sfL -o tmpimg/0abe97c5fd5f904966345847a513ad94.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/0abe97c5fd5f904966345847a513ad94.png" || true
+          curl -sfL -o tmpimg/edea155715e3dfe71f13f6bfab061dc3.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/edea155715e3dfe71f13f6bfab061dc3.png" || true
+          curl -sfL -o tmpimg/b339fa3c4f0937aa530a8ff7ffc66357.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/b339fa3c4f0937aa530a8ff7ffc66357.png" || true
+          curl -sfL -o tmpimg/dbe35fea3b2bb5cb48a0e20622313510.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/dbe35fea3b2bb5cb48a0e20622313510.png" || true
+          curl -sfL -o tmpimg/e3985c0d5cb8a0bc536f7a30ddebb117.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/e3985c0d5cb8a0bc536f7a30ddebb117.png" || true
+          curl -sfL -o tmpimg/e840edc641ae9d48456a48d725638ad6.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/e840edc641ae9d48456a48d725638ad6.png" || true
+          curl -sfL -o tmpimg/1190d0569853f931beb531acef91cffd.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/1190d0569853f931beb531acef91cffd.png" || true
+          curl -sfL -o tmpimg/24c4dbf2ca03916fba840d08495073c2.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/24c4dbf2ca03916fba840d08495073c2.png" || true
+          curl -sfL -o tmpimg/8822e194baf6a88e7f41ea01496248ff.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/8822e194baf6a88e7f41ea01496248ff.png" || true
+          curl -sfL -o tmpimg/7626771e744b9f50793ddcb4936c935d.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/7626771e744b9f50793ddcb4936c935d.png" || true
+          curl -sfL -o tmpimg/0a86810fff39c4e7c1d7f6e113da4346.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/0a86810fff39c4e7c1d7f6e113da4346.png" || true
+          curl -sfL -o tmpimg/a89c94e853bcaf64940473a9b13c3cc0.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/a89c94e853bcaf64940473a9b13c3cc0.png" || true
+          curl -sfL -o tmpimg/62e6862b57efd58453d65fe215137ae0.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/62e6862b57efd58453d65fe215137ae0.png" || true
+          curl -sfL -o tmpimg/e57dac913c0642e4898ffbb8001a7c19.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/e57dac913c0642e4898ffbb8001a7c19.png" || true
+          curl -sfL -o tmpimg/7803d8337dceca5c485f342317284a28.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/7803d8337dceca5c485f342317284a28.png" || true
+          curl -sfL -o tmpimg/52796620a847ee348e81cc23f3c615fe.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/52796620a847ee348e81cc23f3c615fe.png" || true
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add tmpimg && git commit -m "img lista" && git push
