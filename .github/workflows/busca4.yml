@@ -1,0 +1,17 @@
+name: busca4
+on: {push: {branches: [busca4]}}
+permissions: {contents: write}
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/d3a51ef4b44013722863f140e9f51a70.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d3a51ef4b44013722863f140e9f51a70.png" || true
+          curl -sfL -o tmpimg/a290819a1c0af38a9b1d5c03bb35fb43.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/a290819a1c0af38a9b1d5c03bb35fb43.png" || true
+          curl -sfL -o tmpimg/057ee894d8120b01fedbdb71cb646f84.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/057ee894d8120b01fedbdb71cb646f84.png" || true
+          curl -sfL -o tmpimg/37ef6447c11bc59b7dedddb18e10c526.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/37ef6447c11bc59b7dedddb18e10c526.png" || true
+          curl -sfL -o tmpimg/fb4e26969b41ee4a81d4d867bd62989d.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/fb4e26969b41ee4a81d4d867bd62989d.png" || true
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add tmpimg && git commit -m "img lista" && git push
