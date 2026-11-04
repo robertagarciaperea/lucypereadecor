@@ -253,10 +253,10 @@ DECORACIONES = [
     ("Set de campanas de metal", [("21, 38 y 52 cm (por pieza)", 1200)], "fe991ba5", ""),
     ("Set de cubetas Merry Christmas", [("34 cm diám × 30 cm alto", 1370)], "ae02ba69", ""),
     ("Set de cubetas de ciervo", [("23.5 cm alto × 22.9 cm diám", 590)], "b07fb5e0", ""),
-    ("Pie de árbol de terciopelo rojo", [("152 cm diám", 3500)], "c19d456c", ""),
-    ("Pie de árbol de terciopelo burgundy", [("152 cm diám", 3500)], "img/pie-arbol-burgundy.webp", ""),
-    ("Pie de árbol de terciopelo blanco", [("152 cm diám", 3500)], "img/pie-arbol-blanco.webp", ""),
-    ("Pie de árbol de terciopelo champagne", [("152 cm diám", 2200)], "aaf0df01", ""),
+    ("Pie de árbol de terciopelo rojo", [("184 cm diám", 3500)], "c19d456c", ""),
+    ("Pie de árbol de terciopelo burgundy", [("184 cm diám", 3500)], "img/pie-arbol-burgundy.webp", ""),
+    ("Pie de árbol de terciopelo blanco", [("184 cm diám", 3500)], "img/pie-arbol-blanco.webp", ""),
+    ("Pie de árbol de terciopelo champagne", [("152 cm diám", 2600)], "aaf0df01", ""),
     ("Manta de piel vegana color tostado", [("154 cm", 1800)], "c28dc620", ""),
 ]
 
