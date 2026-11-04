@@ -210,7 +210,7 @@ DECORACIONES = [
     ("Cascanueces verde de terciopelo", [("72 cm alto", 1700)], "9551042a", ""),
     ("Cascanueces rojo de terciopelo", [("72 cm alto", 1700)], "img/cascanueces-rojo-terciopelo.webp?v=3", ""),
     ("Esferas de alambre plateado con luces LED cálidas", [("Set de 3 · 21, 38 y 52 cm", 14000), ("Sola · 52 cm", 6000), ("Sola · 38 cm", 5000), ("Sola · 21 cm", 4000)], "db95e793", ""),
-    ("Set de 3 esferas de ratán y sisal con glitter", [("21, 38 y 52 cm alto", 9400)], "3883a5ce", ""),
+    ("Esferas de ratán y sisal con glitter", [("Set de 3 · 21, 38 y 52 cm", 9400), ("Sola · 52 cm", 4500), ("Sola · 38 cm", 3500), ("Sola · 21 cm", 2500)], "3883a5ce", ""),
     ("Set de 3 cebollas de ratán y sisal con glitter", [("21, 38 y 52 cm alto", 3750)], "8ec76a97", ""),
     ("Estrella de alambre plateado con luces LED cálidas", [("74 cm", 3750)], "5d9b0c64", ""),
     ("Set de cascabeles rosas", [("40, 50 y 60 cm diám", 7100)], "e757744e", "agotado"),
