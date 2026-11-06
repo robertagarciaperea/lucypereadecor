@@ -1,0 +1,22 @@
+name: busca9
+on: {push: {branches: [busca9]}}
+permissions: {contents: write}
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/fd0125dd583a9018a936e1fbcce348b1.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/fd0125dd583a9018a936e1fbcce348b1.png" || true
+          curl -sfL -o tmpimg/de6e558707fdc6fb8dec07beb2b3a346.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/de6e558707fdc6fb8dec07beb2b3a346.png" || true
+          curl -sfL -o tmpimg/b3c8eeb518dc0d6d50a696c57409f906.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/b3c8eeb518dc0d6d50a696c57409f906.png" || true
+          curl -sfL -o tmpimg/d3a51ef4b44013722863f140e9f51a70.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d3a51ef4b44013722863f140e9f51a70.png" || true
+          curl -sfL -o tmpimg/96412652ca290b4179edaefa94f1d010.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/96412652ca290b4179edaefa94f1d010.png" || true
+          curl -sfL -o tmpimg/baa4e96ee389c294248a9e647ab60f36.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/baa4e96ee389c294248a9e647ab60f36.png" || true
+          curl -sfL -o tmpimg/015d93cc14fde656e585045c446bfda2.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/015d93cc14fde656e585045c446bfda2.png" || true
+          curl -sfL -o tmpimg/18549008c559f82cc83cc08f7d34afba.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/18549008c559f82cc83cc08f7d34afba.png" || true
+          curl -sfL -o tmpimg/d14dbd9b476e70b4b90f8b7f7f493f1e.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/d14dbd9b476e70b4b90f8b7f7f493f1e.png" || true
+          curl -sfL -o tmpimg/994828171c26686619b6a2c47d3c2447.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/994828171c26686619b6a2c47d3c2447.png" || true
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add tmpimg && git commit -m "img lista" && git push
