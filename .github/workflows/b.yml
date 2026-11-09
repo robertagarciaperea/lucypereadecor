@@ -1,0 +1,13 @@
+name: b
+on: push
+permissions: {contents: write}
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          for f in  01ba53c69b7d2b8ba584a3762ad92b5e.png 314d43bd8e5977d80c668c7dd6e5f17c.png 9c3e17f878acba7bb287efb6782948be.png d6b08cb1f5267ca8f0505f23d7672219.png 281e47f7814646190ab345cc9f9a4526.png 433a7da0a7dcc2bd1e568f65240100d1.png db95e793d7ea64dac0a736369aff4610.png fb068ce5c390ff1de46f1bc3ae6db89f.png d8fc4331eb29e53db5eac4bf34d11f5d.png 82bc24cd93faec582d3a273167a77a1d.png f1050164415d4541dccaa44c147af3a6.png fd0125dd583a9018a936e1fbcce348b1.png a8ae392240a4614bb5bd894496f73d72.png 598238924c6861ff2546641635fa527b.png b3c8eeb518dc0d6d50a696c57409f906.png 2dfe62f7dae657f30fa2beb89bd8dd8f.png 305d4d675c44c87f681e9cd61ff6ae26.png 50eadc8a1fe4ce040e64ca85ce8035e2.png; do curl -sfL -o tmpimg/$f "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/$f" || echo fail $f; done
+          git config user.name bot; git config user.email bot@x
+          git add tmpimg; git commit -m "img lista"; git push
