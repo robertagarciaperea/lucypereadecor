@@ -1,0 +1,13 @@
+name: b
+on: push
+permissions: {contents: write}
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          curl -sfL -o tmpimg/598238924c6861ff2546641635fa527b.png "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/598238924c6861ff2546641635fa527b.png"
+          git config user.name bot; git config user.email bot@x
+          git add tmpimg; git commit -m "img lista"; git push
