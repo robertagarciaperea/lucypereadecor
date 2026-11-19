@@ -1,0 +1,13 @@
+name: b
+on: push
+permissions: {contents: write}
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmpimg
+          for f in  7ea4819e52d3d6b4f531410582e98500.png eebbd2b8c9734bd10685dc52f32c3787.png 2fe2440f3bfa432e265a6d800e325235.png bb7711bd7f8ffa3065b6e8ae6d69a48f.png d14dbd9b476e70b4b90f8b7f7f493f1e.png 46a74b0e14da0cd86d4cdda9b465695d.png baa4e96ee389c294248a9e647ab60f36.png fe68c497fee09382b1d01e7140835106.png d5e266d97286b7447a5c9b0fed80bb06.png d8bc8943d4ab81b48b42c2d8600a5865.png 2dc76d08d6b4359b8f4dd96060cd620d.png d2a1dcd4ce19946ddcdd56e79239f37e.png; do curl -sfL -o tmpimg/$f "https://robertagarciabook.my.canva.site/lucypereadecor-catalogo/_assets/media/$f" || echo fail $f; done
+          git config user.name bot; git config user.email bot@x
+          git add tmpimg; git commit -m "img lista"; git push
