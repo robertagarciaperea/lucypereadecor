@@ -31,6 +31,8 @@ INCLUDES = {
 }
 
 ARBOLES = [
+    ("Nordmann Fir", [("2.75 m alto × 1.75 m diám · 1,400 luces LED que cambian de color", 24000)], "img/nordmann-fir.webp", ""),
+    ("Norway Spruce", [("2.28 m alto × 1.55 m diám · 750 luces LED que cambian de color", 13600)], "img/norway-spruce.webp", ""),
     ("Hudson Fraser Nevado Grande", [("3.05 m alto × 1.78 m diám · 1,250 luces LED", 39000)], "04041766", ""),
     ("Hudson Fraser Nevado Chico", [("2.28 m alto × 1.54 m diám · 800 luces LED", 18000)], "04041766", ""),
     ("Hudson Natural Fraser Chico", [("2.28 m alto × 1.55 m diám · 800 luces LED blanco cálido", 16400)], "c655ca1a", "agotado"),
@@ -53,12 +55,12 @@ ESFERAS = [
     ("Esfera blanca brillosa gigante", [("50 cm", 5900), ("40 cm", 2650)], "fb4e2696", ""),
     ("Esfera roja brillosa", [("40 cm · agotada", None), ("25 cm", 800), ("20 cm", 400), ("15 cm", 200)], "eebbd2b8", ""),
     ("Esfera plata brillosa", [("40 cm", 2680)], "408e3017", ""),
-    ("Esfera champagne brillosa", [("40 cm", 2680)], "4a5dc7e8", "agotado"),
+    ("Esfera champagne brillosa", [("40 cm", 2680)], "4a5dc7e8", ""),
     ("Esfera negra perla brillosa", [("20 cm", 600)], "02fe9313", ""),
     ("Esfera brillosa azul", [("30 cm · agotada", None), ("25 cm", 950)], "7d62451d", ""),
     ("Esfera azul oscuro candy", [("30 cm", 1800), ("20 cm", 600), ("15 cm", 250)], "2fe2440f", ""),
     ("Esfera brillosa rosa", [("25 cm", 950), ("20 cm", 600)], "a7f99b74", ""),
-    ("Esfera brillosa dorada", [("25 cm", 950)], "03f46502", "agotado"),
+    ("Esfera brillosa dorada", [("25 cm", 950)], "03f46502", ""),
     ("Esfera transparente iridiscente", [("30 cm", 1800), ("25 cm", 950), ("20 cm", 550)], "caa4efdc", ""),
     ("Esfera blanca de terciopelo", [("25 cm", 850), ("15 cm", 250)], "a290819a", ""),
     ("Esfera roja de terciopelo", [("25 cm", 850), ("15 cm · agotada", None)], "99482817", ""),
